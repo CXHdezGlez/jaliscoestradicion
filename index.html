@@ -292,7 +292,7 @@
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
   <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-all duration-300">
+  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-[background-color,box-shadow] duration-200">
     <div class="flex justify-between items-center px-4 lg:px-margin-desktop py-3 max-w-container-max mx-auto">
       <a href="#hero" class="flex items-center gap-2.5 group shrink-0 min-h-[44px]" aria-label="Mariachi Jalisco Es Tradición, ir al inicio">
         <img width="128" height="128" src="assets/images/web/logo-128.webp" alt="Logotipo Mariachi Jalisco Es Tradición" class="h-10 md:h-12 w-auto object-contain mix-blend-lighten transition-transform duration-300"/>
@@ -321,7 +321,7 @@
         <a class="nav-link font-label-lg uppercase tracking-wider text-on-background/70 hover:text-primary" href="#galeria">Galería</a>
         <a class="nav-link font-label-lg uppercase tracking-wider text-on-background/70 hover:text-primary" href="#contacto">Contacto</a>
       </div>
-      <a href="#reservacion" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors active:scale-95 text-center font-bold text-xs shrink-0">
+      <a href="#reservacion" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors text-center font-bold text-xs shrink-0">
         Apartar fecha
       </a>
     </div>
@@ -354,7 +354,7 @@
           <span class="font-label-sm uppercase">Llamada Directa</span>
         </a>
       </div>
-      <a href="https://wa.me/523320262503?text=Hola,%20deseo%20apartar%20mi%20fecha%20con%20Mariachi%20Jalisco%20Es%20Tradición" target="_blank" class="bg-primary text-black font-label-sm py-3.5 px-4 uppercase tracking-wider text-xs mt-2 text-center active:scale-95 font-bold gala-glow rounded">
+      <a href="https://wa.me/523320262503?text=Hola,%20deseo%20apartar%20mi%20fecha%20con%20Mariachi%20Jalisco%20Es%20Tradición" target="_blank" class="bg-primary text-black font-label-sm py-3.5 px-4 uppercase tracking-wider text-xs mt-2 text-center active:scale-[0.97] font-bold gala-glow rounded">
         Apartar fecha
       </a>
     </div>
@@ -441,7 +441,7 @@
             <div class="relative aspect-[2/1] sm:aspect-[16/10] overflow-hidden">
               <img decoding="async" width="1000" height="558" src="assets/images/web/servicio_bodas.webp" 
                    alt="Mariachi para Bodas y Misas Nupciales en Guadalajara" 
-                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" 
+                   class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" 
                    loading="lazy" />
               <!-- Degradado sutil para integración elegante -->
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-black/40"></div>
@@ -487,7 +487,7 @@
           <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-2">
             <a class="w-full min-h-[48px] bg-surface-container-high border border-plata/30 hover:border-primary hover:bg-primary hover:text-black text-primary font-label-sm uppercase tracking-wider text-sm font-bold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2" href="#reservacion" onclick="if(window.preselectService) window.preselectService('Boda')">
               <span>Cotizar Boda</span>
-              <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+              <span class="material-symbols-outlined text-sm transition-transform duration-200 ease-salida group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -499,7 +499,7 @@
             <div class="relative aspect-[2/1] sm:aspect-[16/10] overflow-hidden">
               <img decoding="async" width="1000" height="558" src="assets/images/web/servicio_corporativos.webp" 
                    alt="Mariachi para Eventos Corporativos y Cenas Empresariales" 
-                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" 
+                   class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" 
                    loading="lazy" />
               <!-- Degradado sutil para integración elegante -->
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-black/40"></div>
@@ -545,7 +545,7 @@
           <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-2">
             <a class="w-full min-h-[48px] bg-surface-container-high border border-plata/30 hover:border-primary hover:bg-primary hover:text-black text-primary font-label-sm uppercase tracking-wider text-sm font-bold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2" href="#reservacion" onclick="if(window.preselectService) window.preselectService('Corporativo')">
               <span>Cotizar Corporativo</span>
-              <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+              <span class="material-symbols-outlined text-sm transition-transform duration-200 ease-salida group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -557,7 +557,7 @@
             <div class="relative aspect-[2/1] sm:aspect-[16/10] overflow-hidden">
               <img decoding="async" width="1000" height="558" src="assets/images/web/servicio_serenatas.webp" 
                    alt="Mariachi para Serenatas y Detalles en Guadalajara" 
-                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" 
+                   class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" 
                    loading="lazy" />
               <!-- Degradado sutil para integración elegante -->
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-black/40"></div>
@@ -603,7 +603,7 @@
           <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-2">
             <a class="w-full min-h-[48px] bg-surface-container-high border border-plata/30 hover:border-primary hover:bg-primary hover:text-black text-primary font-label-sm uppercase tracking-wider text-sm font-bold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2" href="#reservacion" onclick="if(window.preselectService) window.preselectService('Serenata')">
               <span>Cotizar Serenata</span>
-              <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+              <span class="material-symbols-outlined text-sm transition-transform duration-200 ease-salida group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -827,7 +827,7 @@
                 </div>
               </div>
 
-              <button id="form-submit" class="btn-ambar w-full min-h-[56px] bg-primary text-black py-4 font-label-lg uppercase tracking-widest rounded-lg transition-all active:scale-[0.98] font-bold text-center flex items-center justify-center gap-2.5 text-sm shadow-xl disabled:opacity-60 disabled:cursor-wait" type="submit">
+              <button id="form-submit" class="btn-ambar w-full min-h-[56px] bg-primary text-black py-4 font-label-lg uppercase tracking-widest rounded-lg transition-colors font-bold text-center flex items-center justify-center gap-2.5 text-sm shadow-xl disabled:opacity-60 disabled:cursor-wait" type="submit">
                 <span class="material-symbols-outlined text-xl" aria-hidden="true">send</span> Enviar solicitud por WhatsApp
               </button>
               <p class="text-sm text-on-background/65 text-center">45 min de música continua por tanda · Audio profesional incluido. El precio final se confirma por WhatsApp según la fecha y la ubicación; fuera de la ZMG se suma el costo de traslado.</p>
@@ -886,7 +886,7 @@
           <!-- Facebook Video 1 -->
           <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
             <a href="https://www.facebook.com/share/v/1QK6w3zeVM/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" class="relative aspect-video overflow-hidden cursor-pointer block">
-              <img decoding="async" loading="lazy" width="1000" height="750" src="assets/images/web/galeria_1.webp" alt="Integrantes de Mariachi Jalisco Es Tradición en traje negro durante una serenata al aire libre" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"/>
+              <img decoding="async" loading="lazy" width="1000" height="750" src="assets/images/web/galeria_1.webp" alt="Integrantes de Mariachi Jalisco Es Tradición en traje negro durante una serenata al aire libre" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]"/>
               <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-2 group-hover:bg-black/10 transition-colors">
                 <span class="inline-flex items-center gap-2 rounded-full bg-black/75 border border-plata/50 text-on-background text-sm font-semibold px-4 py-2 backdrop-blur-md transition-colors group-hover:border-primary">
                   <span class="material-symbols-outlined text-lg" aria-hidden="true">open_in_new</span> Ver en Facebook
@@ -910,7 +910,7 @@
           <!-- Facebook Video 2 -->
           <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
             <a href="https://www.facebook.com/share/v/1CpGEnc8RN/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" class="relative aspect-video overflow-hidden cursor-pointer block">
-              <img decoding="async" loading="lazy" width="1000" height="1333" src="assets/images/web/galeria_2.webp" alt="La agrupación completa en traje de charro negro antes de una presentación" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"/>
+              <img decoding="async" loading="lazy" width="1000" height="1333" src="assets/images/web/galeria_2.webp" alt="La agrupación completa en traje de charro negro antes de una presentación" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]"/>
               <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-2 group-hover:bg-black/10 transition-colors">
                 <span class="inline-flex items-center gap-2 rounded-full bg-black/75 border border-plata/50 text-on-background text-sm font-semibold px-4 py-2 backdrop-blur-md transition-colors group-hover:border-primary">
                   <span class="material-symbols-outlined text-lg" aria-hidden="true">open_in_new</span> Ver en Facebook
@@ -934,7 +934,7 @@
           <!-- Facebook Video 3 (Reel) -->
           <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
             <a href="https://www.facebook.com/share/r/18krTWH9ZK/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" class="relative aspect-video overflow-hidden cursor-pointer block">
-              <img decoding="async" loading="lazy" width="1000" height="750" src="assets/images/web/galeria_3.webp" alt="Músicos de Mariachi Jalisco Es Tradición con violines y guitarrón en un patio" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"/>
+              <img decoding="async" loading="lazy" width="1000" height="750" src="assets/images/web/galeria_3.webp" alt="Músicos de Mariachi Jalisco Es Tradición con violines y guitarrón en un patio" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]"/>
               <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-2 group-hover:bg-black/10 transition-colors">
                 <span class="inline-flex items-center gap-2 rounded-full bg-black/75 border border-plata/50 text-on-background text-sm font-semibold px-4 py-2 backdrop-blur-md transition-colors group-hover:border-primary">
                   <span class="material-symbols-outlined text-lg" aria-hidden="true">open_in_new</span> Ver en Facebook
@@ -960,21 +960,21 @@
       <!-- Fotografías adicionales retocadas de alto impacto -->
       <div class="grid grid-cols-2 gap-3 md:grid-cols-12 md:grid-rows-2 md:gap-6 md:h-[600px]">
         <div class="col-span-2 aspect-[4/3] md:aspect-auto md:col-span-8 md:row-span-2 relative group overflow-hidden gallery-item cursor-pointer gala-border rounded-xl" tabindex="0" role="button" aria-label="Ampliar foto: Integrantes de Mariachi Jalisco Es Tradición en traje de charro negro y moño rojo en un patio de hacienda">
-          <img decoding="async" loading="lazy" width="1600" height="1200" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" alt="Integrantes de Mariachi Jalisco Es Tradición en traje de charro negro y moño rojo en un patio de hacienda" data-alt="Integrantes de Mariachi Jalisco Es Tradición en traje de charro negro y moño rojo en un patio de hacienda" src="assets/images/web/galeria_4.webp"/>
+          <img decoding="async" loading="lazy" width="1600" height="1200" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.03]" alt="Integrantes de Mariachi Jalisco Es Tradición en traje de charro negro y moño rojo en un patio de hacienda" data-alt="Integrantes de Mariachi Jalisco Es Tradición en traje de charro negro y moño rojo en un patio de hacienda" src="assets/images/web/galeria_4.webp"/>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <span class="material-symbols-outlined text-plata text-6xl drop-shadow-lg" aria-hidden="true">zoom_in</span>
           </div>
         </div>
         <div class="col-span-1 aspect-square md:aspect-auto md:col-span-4 md:row-span-1 relative group overflow-hidden gallery-item cursor-pointer gala-border rounded-xl" tabindex="0" role="button" aria-label="Ampliar foto: Trío de Mariachi Jalisco Es Tradición con guitarra, guitarrón y violín en una fiesta">
-          <img decoding="async" loading="lazy" width="900" height="640" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" alt="Trío de Mariachi Jalisco Es Tradición con guitarra, guitarrón y violín en una fiesta" data-alt="Trío de Mariachi Jalisco Es Tradición con guitarra, guitarrón y violín en una fiesta" src="assets/images/web/galeria_5.webp"/>
+          <img decoding="async" loading="lazy" width="900" height="640" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.03]" alt="Trío de Mariachi Jalisco Es Tradición con guitarra, guitarrón y violín en una fiesta" data-alt="Trío de Mariachi Jalisco Es Tradición con guitarra, guitarrón y violín en una fiesta" src="assets/images/web/galeria_5.webp"/>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <span class="material-symbols-outlined text-plata text-4xl drop-shadow-lg" aria-hidden="true">zoom_in</span>
           </div>
         </div>
         <div class="col-span-1 aspect-square md:aspect-auto md:col-span-4 md:row-span-1 relative group overflow-hidden gallery-item cursor-pointer gala-border rounded-xl" tabindex="0" role="button" aria-label="Ampliar foto: Mariachi Jalisco Es Tradición tocando en una terraza durante un evento nocturno">
-          <img decoding="async" loading="lazy" width="900" height="675" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" alt="Mariachi Jalisco Es Tradición tocando en una terraza durante un evento nocturno" data-alt="Mariachi Jalisco Es Tradición tocando en una terraza durante un evento nocturno" src="assets/images/web/galeria_6.webp"/>
+          <img decoding="async" loading="lazy" width="900" height="675" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.03]" alt="Mariachi Jalisco Es Tradición tocando en una terraza durante un evento nocturno" data-alt="Mariachi Jalisco Es Tradición tocando en una terraza durante un evento nocturno" src="assets/images/web/galeria_6.webp"/>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <span class="material-symbols-outlined text-plata text-4xl drop-shadow-lg" aria-hidden="true">zoom_in</span>
@@ -995,7 +995,7 @@
         <!-- Violín -->
         <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
           <div class="aspect-[4/3] lg:aspect-[3/4] overflow-hidden relative">
-            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" alt="Violín de Mariachi" src="assets/images/web/inst_violin.webp"/>
+            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" alt="Violín de Mariachi" src="assets/images/web/inst_violin.webp"/>
           </div>
           <h3 class="font-headline-md text-on-background text-xl mt-4 mb-1 px-4 text-center">Violín</h3>
           <p class="font-label-sm text-sm text-on-background/65 text-center px-4 pb-5">Sección de Cuerdas</p>
@@ -1004,7 +1004,7 @@
         <!-- Trompeta -->
         <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
           <div class="aspect-[4/3] lg:aspect-[3/4] overflow-hidden relative">
-            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" alt="Trompeta de Mariachi" src="assets/images/web/inst_trumpet.webp"/>
+            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" alt="Trompeta de Mariachi" src="assets/images/web/inst_trumpet.webp"/>
           </div>
           <h3 class="font-headline-md text-on-background text-xl mt-4 mb-1 px-4 text-center">Trompeta</h3>
           <p class="font-label-sm text-sm text-on-background/65 text-center px-4 pb-5">Sección de Metales</p>
@@ -1013,7 +1013,7 @@
         <!-- Armonía -->
         <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
           <div class="aspect-[4/3] lg:aspect-[3/4] overflow-hidden relative">
-            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" alt="Armonía (Guitarrón, Vihuela y Guitarra)" src="assets/images/web/inst_armonia.webp"/>
+            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" alt="Armonía (Guitarrón, Vihuela y Guitarra)" src="assets/images/web/inst_armonia.webp"/>
           </div>
           <h3 class="font-headline-md text-on-background text-xl mt-4 mb-1 px-4 text-center">Armonía</h3>
           <p class="font-label-sm text-sm text-on-background/65 text-center px-4 pb-5">Guitarrón, Vihuela y Guitarra</p>
@@ -1022,7 +1022,7 @@
         <!-- Acordeón -->
         <div class="bg-surface-container gala-border rounded-xl overflow-hidden flex flex-col group">
           <div class="aspect-[4/3] lg:aspect-[3/4] overflow-hidden relative">
-            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" alt="Acordeón de Mariachi" src="assets/images/web/inst_acordeon.webp"/>
+            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" alt="Acordeón de Mariachi" src="assets/images/web/inst_acordeon.webp"/>
           </div>
           <h3 class="font-headline-md text-on-background text-xl mt-4 mb-1 px-4 text-center">Acordeón</h3>
           <p class="font-label-sm text-sm text-on-background/65 text-center px-4 pb-5">Matiz &amp; Melodía</p>
@@ -1031,7 +1031,7 @@
         <!-- Especial: Arpa -->
         <div class="bg-surface-container col-span-2 lg:col-span-1 gala-border rounded-xl overflow-hidden flex flex-col group">
           <div class="aspect-[16/9] sm:aspect-[4/3] lg:aspect-[3/4] overflow-hidden relative">
-            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" alt="Arpa Mariachi Especial" src="assets/images/web/inst_arpa.webp"/>
+            <img decoding="async" loading="lazy" width="700" height="523" class="w-full h-full object-cover transition-transform duration-500 ease-salida group-hover:scale-[1.04]" alt="Arpa Mariachi Especial" src="assets/images/web/inst_arpa.webp"/>
           </div>
           <h3 class="font-headline-md text-on-background text-xl mt-4 mb-1 px-4 text-center">Especial: Arpa</h3>
           <p class="font-label-sm text-sm text-on-background/65 text-center px-4 pb-5">Ensamble completo</p>
@@ -1131,7 +1131,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Con cuánto tiempo de anticipación puedo reservar?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Lo antes posible: la agenda se llena rápido. También atendemos eventos para el mismo día, según disponibilidad y el tiempo de traslado a tu evento.</div></div>
         </div>
@@ -1140,7 +1140,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Puedo pagar en efectivo?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí, es la forma más común y no tiene comisión. Con tarjeta o meses sin intereses se cobra la comisión del servicio de pago.</div></div>
         </div>
@@ -1149,7 +1149,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Es necesario dar anticipo?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">No es obligatorio, pero sí recomendable: el anticipo asegura tu fecha en la agenda. El monto lo acordamos contigo por WhatsApp.</div></div>
         </div>
@@ -1158,7 +1158,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Puedo pagar a meses sin intereses?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí, a 3, 9 y 12 meses con tarjeta de crédito vía Mercado Pago. No hay intereses, pero se cobra la comisión del servicio de pago.</div></div>
         </div>
@@ -1167,7 +1167,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Se pueden pedir canciones especiales?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí. Tenemos un repertorio amplio; si la canción que quieres no está en él, pídela con al menos 15 días de anticipación para ensayarla.</div></div>
         </div>
@@ -1176,7 +1176,7 @@
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Tienen equipo de sonido propio?</span>
-            <span class="material-symbols-outlined text-plata transition-transform duration-300" aria-hidden="true">expand_more</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
           <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí, contamos con equipo de audio profesional para eventos de hasta 300 personas. Para eventos masivos, coordinamos con el proveedor técnico.</div></div>
         </div>
@@ -1350,14 +1350,14 @@
   <!-- Barra de acciones al alcance del pulgar (solo celular) -->
   <div id="mobile-action-bar" class="mobile-safe-bottom fixed inset-x-0 bottom-0 z-[110] lg:hidden bg-background/95 backdrop-blur-md border-t border-plata/30 px-3 pt-2">
     <div class="flex gap-2">
-      <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" class="h-12 min-w-[3.5rem] px-2 flex flex-col items-center justify-center text-on-background/80 rounded">
+      <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" class="presionable h-12 min-w-[3.5rem] px-2 flex flex-col items-center justify-center text-on-background/80 rounded">
         <span class="material-symbols-outlined text-2xl leading-none" aria-hidden="true">menu</span>
         <span class="text-xs font-semibold mt-0.5">Menú</span>
       </button>
-      <a href="#reservacion" id="bar-apartar" class="flex-1 h-12 flex items-center justify-center gap-2 bg-primary text-black rounded font-bold uppercase tracking-wider text-sm">
+      <a href="#reservacion" id="bar-apartar" class="presionable flex-1 h-12 flex items-center justify-center gap-2 bg-primary text-black rounded font-bold uppercase tracking-wider text-sm">
         <span class="material-symbols-outlined text-lg" aria-hidden="true">event</span> Apartar
       </a>
-      <a href="https://wa.me/523320262503?text=Hola%20Mariachi%20Jalisco%20Es%20Tradici%C3%B3n%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20un%20evento." target="_blank" rel="noopener" class="flex-1 h-12 flex items-center justify-center gap-2 bg-green-500 text-black rounded font-bold uppercase tracking-wider text-sm">
+      <a href="https://wa.me/523320262503?text=Hola%20Mariachi%20Jalisco%20Es%20Tradici%C3%B3n%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20un%20evento." target="_blank" rel="noopener" class="presionable flex-1 h-12 flex items-center justify-center gap-2 bg-green-500 text-black rounded font-bold uppercase tracking-wider text-sm">
         <span class="material-symbols-outlined text-lg" aria-hidden="true">chat</span> WhatsApp
       </a>
     </div>

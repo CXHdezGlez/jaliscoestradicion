@@ -6,8 +6,13 @@
 module.exports = {
   content: [__dirname + '/index.html', __dirname + '/*/index.html', __dirname + '/js/**/*.js'],
   darkMode: 'class',
+  // hover: solo en dispositivos con mouse; en celular el toque no deja fotos ampliadas pegadas
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
+      transitionTimingFunction: {
+        salida: 'cubic-bezier(0.23, 1, 0.32, 1)',
+      },
       colors: {
         'outline-variant': '#4d4635',
         'on-background': '#e5e2e1',

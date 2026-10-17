@@ -100,7 +100,7 @@
 <body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-all duration-300">
+  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-[background-color,box-shadow] duration-200">
     <div class="flex justify-between items-center px-4 lg:px-margin-desktop py-3 max-w-container-max mx-auto">
       <a href="/" class="flex items-center gap-2.5 group shrink-0 min-h-[44px]" aria-label="Mariachi Jalisco Es Tradición, ir al inicio">
         <img width="128" height="128" src="/assets/images/web/logo-128.webp" alt="Logotipo Mariachi Jalisco Es Tradición" class="h-10 md:h-12 w-auto object-contain mix-blend-lighten"/>
@@ -117,7 +117,7 @@
         <a class="nav-link font-label-lg uppercase tracking-wider text-on-background/70 hover:text-primary transition-colors duration-300" href="/eventos-corporativos/">Empresas</a>
         <a class="nav-link font-label-lg uppercase tracking-wider text-on-background/70 hover:text-primary transition-colors duration-300" href="/#contacto">Contacto</a>
       </div>
-      <a href="/?evento=Serenata#reservacion" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors active:scale-95 text-center font-bold text-xs shrink-0">Apartar fecha</a>
+      <a href="/?evento=Serenata#reservacion" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors text-center font-bold text-xs shrink-0">Apartar fecha</a>
     </div>
   </nav>
 
@@ -366,14 +366,14 @@
   <!-- Barra de acciones al alcance del pulgar (solo celular) -->
   <div id="mobile-action-bar" class="mobile-safe-bottom fixed inset-x-0 bottom-0 z-[110] lg:hidden bg-background/95 backdrop-blur-md border-t border-plata/30 px-3 pt-2">
     <div class="flex gap-2">
-      <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" class="h-12 min-w-[3.5rem] px-2 flex flex-col items-center justify-center text-on-background/80 rounded">
+      <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" class="presionable h-12 min-w-[3.5rem] px-2 flex flex-col items-center justify-center text-on-background/80 rounded">
         <span class="material-symbols-outlined text-2xl leading-none" aria-hidden="true">menu</span>
         <span class="text-xs font-semibold mt-0.5">Menú</span>
       </button>
-      <a href="/?evento=Serenata#reservacion" id="bar-apartar" class="flex-1 h-12 flex items-center justify-center gap-2 bg-primary text-black rounded font-bold uppercase tracking-wider text-sm">
+      <a href="/?evento=Serenata#reservacion" id="bar-apartar" class="presionable flex-1 h-12 flex items-center justify-center gap-2 bg-primary text-black rounded font-bold uppercase tracking-wider text-sm">
         <span class="material-symbols-outlined text-lg" aria-hidden="true">event</span> Apartar
       </a>
-      <a href="https://wa.me/523320262503?text=Hola%20Mariachi%20Jalisco%20Es%20Tradici%C3%B3n%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20un%20evento." target="_blank" rel="noopener" class="flex-1 h-12 flex items-center justify-center gap-2 bg-green-500 text-black rounded font-bold uppercase tracking-wider text-sm">
+      <a href="https://wa.me/523320262503?text=Hola%20Mariachi%20Jalisco%20Es%20Tradici%C3%B3n%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20un%20evento." target="_blank" rel="noopener" class="presionable flex-1 h-12 flex items-center justify-center gap-2 bg-green-500 text-black rounded font-bold uppercase tracking-wider text-sm">
         <span class="material-symbols-outlined text-lg" aria-hidden="true">chat</span> WhatsApp
       </a>
     </div>

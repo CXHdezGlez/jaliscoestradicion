@@ -331,7 +331,7 @@ def pagina(slug, d):
 <body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-all duration-300">
+  <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-plata/30 transition-[background-color,box-shadow] duration-200">
     <div class="flex justify-between items-center px-4 lg:px-margin-desktop py-3 max-w-container-max mx-auto">
       <a href="/" class="flex items-center gap-2.5 group shrink-0 min-h-[44px]" aria-label="Mariachi Jalisco Es Tradición, ir al inicio">
         <img width="128" height="128" src="/assets/images/web/logo-128.webp" alt="Logotipo Mariachi Jalisco Es Tradición" class="h-10 md:h-12 w-auto object-contain mix-blend-lighten"/>
@@ -343,7 +343,7 @@ def pagina(slug, d):
       <div class="hidden lg:flex items-center gap-5 xl:gap-6 text-xs">
 {nav}
       </div>
-      <a href="{apartar}" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors active:scale-95 text-center font-bold text-xs shrink-0">Apartar fecha</a>
+      <a href="{apartar}" class="btn-ambar hidden lg:inline-block bg-primary text-black px-5 py-2.5 rounded-lg font-label-lg uppercase tracking-wider transition-colors text-center font-bold text-xs shrink-0">Apartar fecha</a>
     </div>
   </nav>
 

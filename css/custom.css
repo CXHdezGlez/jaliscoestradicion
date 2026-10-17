@@ -9,6 +9,8 @@
   --pano: #0D0D0F;
   --pano-alto: #1A1614;
   --texto: #e5e2e1;
+  /* Curva de salida fuerte para todo lo que entra o responde al toque */
+  --ease-salida: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* Base Body Styles */
@@ -52,14 +54,29 @@ body {
 }
 
 .gala-glow {
-  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out, transform 160ms var(--ease-salida);
 }
 
-/* Modals */
+/* Modals: entran con un fundido y una escala breve, centrados (no salen del botón) */
 .modal-backdrop {
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
+  transition: opacity 200ms var(--ease-salida);
 }
+.modal-backdrop > div {
+  transition: opacity 200ms var(--ease-salida), transform 200ms var(--ease-salida);
+}
+@starting-style {
+  .modal-backdrop { opacity: 0; }
+  .modal-backdrop > div { opacity: 0; transform: scale(0.96); }
+}
+
+/* Botones de la barra inferior del celular: responden al toque */
+.presionable {
+  transition: transform 160ms var(--ease-salida);
+  -webkit-tap-highlight-color: transparent;
+}
+.presionable:active { transform: scale(0.97); }
 
 #booking-modal-title:focus {
   outline: none;
@@ -96,10 +113,12 @@ body {
 
 /* Widget lateral: se retira mientras el formulario de reservación está en pantalla */
 #side-booking-widget {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, visibility 0.4s;
+  transition: transform 300ms var(--ease-salida), opacity 300ms var(--ease-salida), visibility 300ms;
 }
 
+/* La salida es más rápida que la entrada */
 #side-booking-widget.side-widget-oculto {
+  transition-duration: 200ms;
   transform: translate(110%, -50%);
   opacity: 0;
   visibility: hidden;
@@ -359,7 +378,7 @@ a, button, input, select, textarea, label, summary {
 .tarjeta-servicio {
   transition: border-color 0.25s ease-out, transform 0.25s ease-out, box-shadow 0.25s ease-out;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .tarjeta-servicio:hover {
     transform: translateY(-4px);
     border-color: rgba(231, 163, 62, 0.7);
@@ -417,15 +436,18 @@ a, button, input, select, textarea, label, summary {
 .faq-button[aria-expanded="true"] > span:first-child { color: var(--ambar); }
 
 /* Revelado suave de secciones al entrar en pantalla (solo con JS y sin movimiento reducido) */
-.js .revelar > div {
+.js .revelar > div > * {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 500ms var(--ease-salida), transform 500ms var(--ease-salida);
 }
-.js .revelar.visible > div {
+/* Título, contenido y cierre entran escalonados */
+.js .revelar > div > :nth-child(2) { transition-delay: 60ms; }
+.js .revelar > div > :nth-child(n+3) { transition-delay: 120ms; }
+.js .revelar.visible > div > * {
   opacity: 1;
   transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .revelar > div { opacity: 1; transform: none; transition: none; }
+  .js .revelar > div > * { opacity: 1; transform: none; transition: none; }
 }
