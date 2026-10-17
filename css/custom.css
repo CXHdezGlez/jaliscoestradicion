@@ -238,7 +238,8 @@ section[id] {
 }
 
 /* Sección visible en la navegación (lo marca app.js con aria-current) */
-.nav-link[aria-current="location"] {
+.nav-link[aria-current="location"],
+.nav-link[aria-current="page"] {
   color: var(--ambar);
   text-decoration: underline;
   text-decoration-thickness: 2px;

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jaliscoestradicion.com/</loc>
     <lastmod>2026-10-17</lastmod>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/og-mariachi.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/banda-presentacion.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_bodas.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_serenatas.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_corporativos.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/galeria_4.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.jaliscoestradicion.com/precios/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaliscoestradicion.com/mariachi-para-bodas/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaliscoestradicion.com/serenatas/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaliscoestradicion.com/eventos-corporativos/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaliscoestradicion.com/dia-de-las-madres/</loc>
+    <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>

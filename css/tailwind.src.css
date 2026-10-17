@@ -1,0 +1,4 @@
+/* Fuente de Tailwind: no se enlaza en la página. `npm run build:css` genera css/tailwind.css a partir de este archivo. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

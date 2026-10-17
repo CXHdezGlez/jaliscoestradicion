@@ -601,3 +601,9 @@ window.preselectService = function(serviceType) {
     reservacion.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
 };
+
+// Las páginas de servicio llegan con /?evento=Boda#reservacion: el formulario abre con ese tipo de evento
+document.addEventListener('DOMContentLoaded', () => {
+  const evento = new URLSearchParams(location.search).get('evento');
+  if (evento) window.preselectService(evento);
+});

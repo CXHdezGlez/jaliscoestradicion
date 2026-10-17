@@ -1,0 +1,29 @@
+# Lo que NO se publica: material de trabajo, originales y dependencias.
+# Todo lo demás de esta carpeta es el sitio y se sube a GitHub (y Vercel lo publica).
+
+node_modules/
+.impeccable/
+_respaldo-antes-ui-ux-pro-max/
+extracted_rar/
+Skills/
+Cámara Jalisco Es Tradición/
+Logo Jalisco Es Tradici*n/
+*.zip
+PRODUCT.md
+
+# Originales sin optimizar (el sitio usa las versiones de assets/images/web/)
+assets/images/*.jpg
+assets/images/*.png
+assets/videos/Veracruz I Para web.mp4
+
+# Archivos de versiones anteriores que la página ya no carga
+css/reservation-styles.css
+js/audio-player.js
+js/calculator.js
+js/repertoire.js
+js/reservation.js
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

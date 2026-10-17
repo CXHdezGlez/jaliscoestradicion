@@ -1,0 +1,13 @@
+{
+  "name": "jalisco-es-tradicion",
+  "private": true,
+  "description": "Sitio de Mariachi Jalisco Es Tradición. Solo se usa para compilar Tailwind; no subir node_modules al hosting.",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i css/tailwind.src.css -o css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "0.1.1",
+    "@tailwindcss/forms": "0.5.9",
+    "tailwindcss": "3.4.17"
+  }
+}
