@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.jaliscoestradicion.com/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.jaliscoestradicion.com/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/og-mariachi.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/banda-presentacion.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_bodas.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_serenatas.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/servicio_corporativos.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.jaliscoestradicion.com/assets/images/web/galeria_4.webp</image:loc></image:image>
+  </url>
 </urlset>
