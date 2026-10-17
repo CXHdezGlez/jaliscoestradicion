@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jaliscoestradicion.com/sitemap.xml

@@ -1,0 +1,430 @@
+/* Estilos propios de Jalisco Es Tradición */
+
+/* Fuentes: se cargan una sola vez desde index.html */
+
+:root {
+  /* Traje de charro: paño negro, botonadura de plata y ámbar del moño como único acento */
+  --ambar: #E7A33E;
+  --plata: #C9C7C1;
+  --pano: #0D0D0F;
+  --pano-alto: #1A1614;
+  --texto: #e5e2e1;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--pano);
+  color: var(--texto);
+  font-family: 'Archivo', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--ambar);
+  color: #000000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pano);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(201 199 193 / 0.28);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ambar);
+}
+
+/* Gala Border: el realce al pasar el mouse es el borde, no un brillo */
+.gala-border {
+  border: 1px solid rgb(201 199 193 / 0.28);
+  transition: border-color 0.25s ease-out;
+}
+
+.gala-border:hover {
+  border-color: rgba(231, 163, 62, 0.7);
+}
+
+.gala-glow {
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+/* Modals */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+#booking-modal-title:focus {
+  outline: none;
+}
+
+/* Booking form: estados de error, foco visible y placeholders legibles */
+#detailed-booking-form ::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+#detailed-booking-form :is(input, select, textarea):focus-visible,
+#booking-success-modal :is(a, button):focus-visible {
+  outline: 2px solid var(--ambar);
+  outline-offset: 2px;
+}
+
+#detailed-booking-form [aria-invalid="true"] {
+  border-color: #f87171;
+}
+
+.field-error {
+  display: flex;
+  gap: 0.375rem;
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: #fca5a5;
+}
+
+.field-error[hidden] {
+  display: none;
+}
+
+/* Widget lateral: se retira mientras el formulario de reservación está en pantalla */
+#side-booking-widget {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, visibility 0.4s;
+}
+
+#side-booking-widget.side-widget-oculto {
+  transform: translate(110%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #side-booking-widget {
+    transition: none;
+  }
+}
+
+/* Celular: barra de acciones inferior y menú de secciones */
+.mobile-safe-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+#mobile-action-bar {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobile-action-bar.mobile-bar-oculta {
+  transform: translateY(110%);
+}
+
+@media (max-width: 1023px) {
+  /* La barra fija nunca tapa el final de la página (celular y tablet) */
+  body {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+  }
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid rgb(201 199 193 / 0.28);
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--texto);
+}
+
+.mobile-menu-link:active,
+.mobile-menu-link:hover {
+  color: var(--ambar);
+}
+
+#mobile-menu :is(a, button):focus-visible,
+#mobile-action-bar :is(a, button):focus-visible {
+  outline: 2px solid var(--ambar);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-action-bar {
+    transition: none;
+  }
+}
+
+/* Range Input Styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  height: 6px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--ambar);
+  cursor: pointer;
+  box-shadow: 0 0 0 3px var(--pano-alto);
+}
+
+/* FAQ: la respuesta aparece sin animar la altura, con un fundido breve */
+.faq-answer {
+  display: none;
+}
+
+.faq-answer.open {
+  display: block;
+}
+
+.faq-answer.open .faq-answer-inner {
+  animation: faqIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes faqIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Botonadura de plata del traje de charro: el motivo propio del sitio.
+   Conchos de plata (tonos de la paleta "secondary") unidos por una costura fina. */
+.botonadura-h,
+.botonadura-v {
+  --concho: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cdefs%3E%3CradialGradient id='p' cx='38%25' cy='34%25' r='70%25'%3E%3Cstop offset='0' stop-color='%23f4f3ef'/%3E%3Cstop offset='.5' stop-color='%23c6c7c2'/%3E%3Cstop offset='1' stop-color='%236f706b'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='14' cy='14' r='8.5' fill='url%28%23p%29'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='%235e5f5a' stroke-width='.7'/%3E%3Cg fill='%237d7e79'%3E%3Ccircle cx='14' cy='10.3' r='1.15'/%3E%3Ccircle cx='14' cy='17.7' r='1.15'/%3E%3Ccircle cx='10.3' cy='14' r='1.15'/%3E%3Ccircle cx='17.7' cy='14' r='1.15'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.5' fill='%234f504c'/%3E%3C/svg%3E");
+  background-repeat: repeat-x, no-repeat;
+}
+
+.botonadura-h {
+  width: min(100%, 252px);
+  height: 28px;
+  background-image: var(--concho), linear-gradient(transparent 13.5px, rgba(198, 199, 194, 0.35) 13.5px, rgba(198, 199, 194, 0.35) 14.5px, transparent 14.5px);
+  background-size: 28px 28px, 100% 100%;
+  background-position: center, center;
+}
+
+.botonadura-v {
+  width: 28px;
+  background-image: var(--concho), linear-gradient(90deg, transparent 13.5px, rgba(198, 199, 194, 0.35) 13.5px, rgba(198, 199, 194, 0.35) 14.5px, transparent 14.5px);
+  background-repeat: repeat-y, no-repeat;
+  background-size: 28px 28px, 100% 100%;
+  background-position: top center, center;
+}
+
+/* Pasos del formulario como conchos de la botonadura: la plata marca la estructura, el ámbar queda para precio y acciones */
+.paso-concho {
+  background: radial-gradient(circle at 38% 34%, #f4f3ef 0%, #c9c7c1 50%, #7d7e79 100%);
+  color: #0d0d0f;
+  box-shadow: inset 0 0 0 1px rgba(94, 95, 90, 0.6);
+}
+
+/* Texto sobre el video del hero: sombra suave desplazada para leerse sobre la pared roja y las letras del fondo */
+.hero-legible {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 6px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* Las secciones no quedan bajo el encabezado fijo al navegar a ellas */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Sección visible en la navegación (lo marca app.js con aria-current) */
+.nav-link[aria-current="location"] {
+  color: var(--ambar);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+/* Íconos: un solo peso en todo el sitio */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Superficies del navegador con la paleta: foco de teclado, cursor de texto y controles nativos */
+:focus-visible {
+  outline: 2px solid var(--ambar);
+  outline-offset: 3px;
+}
+
+input, textarea {
+  caret-color: var(--ambar);
+}
+
+input[type=range], input[type=checkbox], input[type=radio] {
+  accent-color: var(--ambar);
+}
+
+/* Enlace para saltar al contenido: invisible hasta que llega el foco del teclado */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: var(--ambar);
+  color: var(--pano);
+  font-weight: 700;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Sin retardo de doble toque en controles táctiles */
+a, button, input, select, textarea, label, summary {
+  touch-action: manipulation;
+}
+
+/* El atributo hidden siempre gana sobre las clases de display (flex, grid…) */
+[hidden] {
+  display: none !important;
+}
+
+/* Abril Fatface solo tiene peso regular: nunca negritas ni cursivas sintéticas */
+.font-display-lg, .font-headline-lg, .font-headline-md, .font-display-lg-mobile, .mobile-menu-link {
+  font-synthesis: none;
+}
+
+/* Movimiento reducido: sin animaciones ni transiciones para quien lo pida en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================================================
+   Pulido visual (ui-ux-pro-max): misma identidad «Traje de charro»,
+   más jerarquía, ritmo y consistencia. Sin colores ni fuentes nuevas.
+   ===================================================================== */
+
+/* Encabezados de sección: antetítulo en plata + título con escala fluida */
+.seccion-antetitulo {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--plata);
+  margin-bottom: 0.75rem;
+}
+
+.seccion-titulo {
+  font-family: 'Abril Fatface', serif;
+  font-synthesis: none;
+  font-weight: 400;
+  font-size: clamp(2rem, 1.35rem + 2.4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+/* Botonadura corta: remate bajo cada título (el mismo concho del hero) */
+.botonadura-h.botonadura-corta {
+  width: 140px;
+  height: 22px;
+  background-size: 28px 22px, 100% 100%;
+  opacity: 0.9;
+}
+.text-center + .botonadura-corta,
+.botonadura-corta.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Botón principal ámbar: el hover se queda en la familia (ámbar más claro), no blanco */
+.btn-ambar {
+  transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.15s ease-out;
+}
+.btn-ambar:hover {
+  background-color: #F0B65E;
+  box-shadow: 0 10px 28px -10px rgba(231, 163, 62, 0.55);
+}
+.btn-ambar:active { transform: scale(0.98); }
+
+/* Tarjetas de servicio: se levantan apenas y el borde pasa a ámbar */
+.tarjeta-servicio {
+  transition: border-color 0.25s ease-out, transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+@media (hover: hover) {
+  .tarjeta-servicio:hover {
+    transform: translateY(-4px);
+    border-color: rgba(231, 163, 62, 0.7);
+    box-shadow: 0 22px 44px -22px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Testimonios: comilla grande en plata como marca de agua y monograma del autor */
+.testimonio { position: relative; }
+.testimonio::before {
+  content: "“";
+  position: absolute;
+  top: 0.75rem;
+  right: 1.5rem;
+  font-family: 'Abril Fatface', serif;
+  font-size: 5.5rem;
+  line-height: 1;
+  color: rgba(201, 199, 193, 0.14);
+  pointer-events: none;
+}
+.testimonio-inicial {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0d0d0f;
+  background: radial-gradient(circle at 38% 34%, #f4f3ef 0%, #c9c7c1 50%, #7d7e79 100%);
+  box-shadow: inset 0 0 0 1px rgba(94, 95, 90, 0.6);
+}
+
+/* Promociones: cada dato marcado con un concho de plata */
+.lista-conchos > li {
+  position: relative;
+  padding-left: 1.75rem;
+}
+.lista-conchos > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 38% 34%, #f4f3ef 0%, #c9c7c1 50%, #7d7e79 100%);
+  box-shadow: inset 0 0 0 1px rgba(94, 95, 90, 0.6);
+}
+
+/* FAQ: pregunta abierta en ámbar */
+.faq-button[aria-expanded="true"] > span:first-child { color: var(--ambar); }
+
+/* Revelado suave de secciones al entrar en pantalla (solo con JS y sin movimiento reducido) */
+.js .revelar > div {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js .revelar.visible > div {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .revelar > div { opacity: 1; transform: none; transition: none; }
+}
