@@ -1,0 +1,7 @@
+# Archivos del proyecto que se guardan en GitHub pero no se publican en el sitio
+scripts/
+package.json
+package-lock.json
+tailwind.config.js
+css/tailwind.src.css
+.gitignore
