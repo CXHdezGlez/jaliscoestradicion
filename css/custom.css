@@ -594,3 +594,27 @@ a, button, input, select, textarea, label, summary {
   .hero-jt__lema { font-size: 1.25rem; }
   .hero-jt__acciones .btn-ambar { white-space: nowrap; }
 }
+
+/* Celular y tablet: el video no ocupa toda la pantalla, para que título, precio y botón principal
+   queden en la primera vista (por encima de la barra inferior de acciones) */
+@media (max-width: 1023px) {
+  .hero-jt { padding-bottom: 40px; }
+  .hero-jt__media {
+    aspect-ratio: auto;
+    height: min(400px, 46svh);
+    max-height: none;
+  }
+  .hero-jt__media video { object-position: center 46%; }
+  .hero-jt__contenido { margin-top: -1.75rem; }
+  .hero-jt__antetitulo { margin-bottom: 0.625rem; font-size: 0.875rem; }
+  .hero-jt__texto .hero-jt__titulo { margin-bottom: 0.875rem; }
+  .hero-jt__lema { font-size: 1rem; margin-bottom: 1.125rem; }
+  .hero-jt__precio { margin-bottom: 0.875rem; }
+  .hero-jt__precio strong { font-size: 1.5rem; }
+  .hero-jt__confianza { margin-top: 1.25rem; }
+}
+/* Pantallas bajas (iPhone SE, celulares en horizontal): video más corto */
+@media (max-width: 1023px) and (max-height: 720px) {
+  .hero-jt__media { height: min(300px, 36svh); }
+  .hero-jt__lema { margin-bottom: 0.875rem; }
+}
