@@ -263,9 +263,9 @@ function initBookingForm() {
     campo('form-name')?.focus();
   });
 
-  // El widget lateral fijo tapa contenido en escritorio: se retira mientras el formulario o la foto de "Nosotros" están en pantalla
+  // El widget lateral fijo tapa contenido en escritorio: se retira mientras el formulario la foto de "Nosotros" o la animación del hero están en pantalla
   const sideWidget = campo('side-booking-widget');
-  const zonasDespejadas = ['reservacion', 'nosotros'].map(campo).filter(Boolean);
+  const zonasDespejadas = ['hero', 'reservacion', 'nosotros'].map(campo).filter(Boolean);
   if (sideWidget && zonasDespejadas.length && 'IntersectionObserver' in window) {
     const visibles = new Set();
     const observer = new IntersectionObserver((entradas) => {
