@@ -8,17 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
 });
 
-// Video del hero: solo en pantallas de tablet o mayores, sin ahorro de datos ni movimiento reducido
+// Video del hero: escudo animado que se abre a la banda real (≈4.5 MB). Versión 16:9 en PC y 4:5 en celular;
+// con ahorro de datos o movimiento reducido se queda el póster (fondo de .hero-jt__media)
 function initHeroVideo() {
   const video = document.getElementById('hero-video');
   if (!video || !video.dataset.src) return;
-  const pantallaGrande = window.matchMedia('(min-width: 768px)').matches;
   const ahorroDatos = navigator.connection && navigator.connection.saveData;
   const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!pantallaGrande || ahorroDatos || sinMovimiento) return;
-  video.src = video.dataset.src;
-  video.autoplay = true;
-  video.play().catch(() => { /* si el navegador bloquea la reproducción, queda el póster */ });
+  if (ahorroDatos || sinMovimiento) return;
+  const pc = window.matchMedia('(min-width: 1024px)');
+  const cargar = () => {
+    const src = pc.matches || !video.dataset.srcMovil ? video.dataset.src : video.dataset.srcMovil;
+    if (video.getAttribute('src') === src) return;
+    video.src = src;
+    video.autoplay = true;
+    video.play().catch(() => { /* si el navegador bloquea la reproducción, queda el póster */ });
+  };
+  cargar();
+  if (pc.addEventListener) pc.addEventListener('change', cargar);
 }
 
 // Mobile Navigation Logic
@@ -88,13 +95,17 @@ function initNavigation() {
     });
   });
 
-  // "Apartar" no tiene sentido dentro del formulario: se oculta y WhatsApp ocupa su lugar
+  // "Apartar" de la barra se oculta cuando ya hay otro a la vista: el botón principal del hero
+  // y dentro del formulario. Menú y WhatsApp se quedan; WhatsApp ocupa el espacio libre.
   const barApartar = document.getElementById('bar-apartar');
-  const reservacion = document.getElementById('reservacion');
-  if (barApartar && reservacion && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([entrada]) => {
-      barApartar.hidden = entrada.isIntersecting;
-    }, { threshold: 0.05 }).observe(reservacion);
+  const zonasConApartar = ['hero-apartar', 'reservacion'].map(id => document.getElementById(id)).filter(Boolean);
+  if (barApartar && zonasConApartar.length && 'IntersectionObserver' in window) {
+    const visibles = new Set();
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(e => e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target));
+      barApartar.hidden = visibles.size > 0;
+    }, { threshold: 0.05 });
+    zonasConApartar.forEach(zona => observador.observe(zona));
   }
 
   // La barra inferior se retira mientras el teclado del celular está abierto sobre un campo

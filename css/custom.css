@@ -451,3 +451,146 @@ a, button, input, select, textarea, label, summary {
 @media (prefers-reduced-motion: reduce) {
   .js .revelar > div > * { opacity: 1; transform: none; transition: none; }
 }
+
+/* ===== Hero con animación del escudo (texto a la izquierda, animación a la derecha) ===== */
+.hero-jt {
+  display: flex;
+  flex-direction: column;
+  background: #0D0D0F;
+  padding-top: 64px; /* alto del encabezado fijo */
+  padding-bottom: 56px;
+}
+.hero-jt__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 78vh;
+  background: #0D0D0F url("../assets/images/web/hero-jt-movil.webp") center / cover no-repeat;
+  overflow: hidden;
+}
+.hero-jt__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-jt__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 13, 15, 0.5) 0%, rgba(13, 13, 15, 0) 14%, rgba(13, 13, 15, 0) 70%, #0D0D0F 100%);
+}
+.hero-jt__contenido { margin-top: -2.5rem; }
+.hero-jt__texto { max-width: 36rem; }
+.hero-jt__texto > p.text-center { text-align: left; }
+.hero-jt__texto > div.justify-center { justify-content: flex-start; }
+.hero-jt__texto .botonadura-h { background-position: left center, center; }
+
+@media (min-width: 640px) {
+  .hero-jt__texto > div.flex-1, .hero-jt__texto .btn-ambar { flex: 0 1 auto; }
+}
+
+@media (min-width: 1024px) {
+  .hero-jt {
+    min-height: 100vh;
+    min-height: 100dvh;
+    justify-content: center;
+    padding-top: 88px;
+    padding-bottom: 48px;
+  }
+  .hero-jt__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+    max-height: none;
+    background-image: url("../assets/images/web/hero-jt-pc.webp");
+    background-position: right center;
+  }
+  /* el escudo vive en el lado derecho del video: que nunca se recorte por la derecha */
+  .hero-jt__media video { object-position: right center; }
+  .hero-jt__velo {
+    background:
+      linear-gradient(90deg, #0D0D0F 0%, rgba(13, 13, 15, 0.92) 26%, rgba(13, 13, 15, 0.55) 40%, rgba(13, 13, 15, 0) 56%),
+      linear-gradient(180deg, rgba(13, 13, 15, 0) 75%, rgba(13, 13, 15, 0.85) 100%);
+  }
+  .hero-jt__contenido { margin-top: 0; }
+  .hero-jt__texto { max-width: 34rem; }
+  .hero-jt__texto h1 { font-size: clamp(4rem, 5.4vw, 5.5rem); }
+}
+
+/* ===== Panel de texto del hero: 3 estilos de letra, 1 acento (ámbar), 1 caja (botón principal) ===== */
+.hero-jt__nota {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #C9C7C1; /* plata */
+}
+.hero-jt__antetitulo { margin-bottom: 1.25rem; }
+
+.hero-jt__texto .hero-jt__titulo {
+  color: #F4ECDD;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 11vw, 3.5rem);
+  line-height: 1.02;
+}
+.hero-jt__mayus { text-transform: uppercase; letter-spacing: 0.01em; }
+.hero-jt__es { text-transform: lowercase; }
+
+.hero-jt__lema {
+  margin: 0 0 2rem;
+  max-width: 30rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(229, 226, 225, 0.86);
+}
+
+.hero-jt__precio {
+  margin: 0 0 0.25rem;
+  font-size: 1.0625rem;
+  color: rgba(229, 226, 225, 0.86);
+}
+.hero-jt__precio strong {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #E7A33E;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.25rem;
+}
+.hero-jt__condiciones { text-wrap: pretty; font-size: 0.875rem; font-weight: 400; color: rgba(229, 226, 225, 0.62); margin-bottom: 1.75rem; }
+
+.hero-jt__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.75rem;
+  width: 100%;
+}
+.hero-jt__acciones .btn-ambar {
+  min-height: 56px;
+  padding: 0 2rem;
+  width: 100%;
+}
+.hero-jt__enlace {
+  min-height: 44px;
+  color: #F4ECDD;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 199, 193, 0.45);
+  text-underline-offset: 6px;
+  transition: color 0.2s ease-out, text-decoration-color 0.2s ease-out;
+}
+.hero-jt__enlace .material-symbols-outlined { color: #C9C7C1; text-decoration: none; }
+.hero-jt__enlace:hover { color: #E7A33E; text-decoration-color: #E7A33E; }
+.hero-jt__enlace:focus-visible { outline: 2px solid #E7A33E; outline-offset: 4px; border-radius: 2px; }
+
+.hero-jt__confianza { margin-top: 1.75rem; font-size: 0.875rem; }
+
+@media (min-width: 640px) {
+  .hero-jt__acciones .btn-ambar { width: auto; }
+}
+@media (min-width: 1024px) {
+  .hero-jt__texto .hero-jt__titulo { font-size: clamp(3.25rem, 4.1vw, 4.25rem); }
+  .hero-jt__lema { font-size: 1.25rem; }
+  .hero-jt__acciones .btn-ambar { white-space: nowrap; }
+}

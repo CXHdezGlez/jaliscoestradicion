@@ -27,7 +27,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/web/favicon-32.png"/>
   <link rel="apple-touch-icon" href="assets/images/web/apple-touch-icon.png"/>
   
-  <link rel="preload" as="image" href="assets/images/web/hero-poster.webp" fetchpriority="high"/>
+  <link rel="preload" as="image" href="assets/images/web/hero-jt-pc.webp" media="(min-width: 1024px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="assets/images/web/hero-jt-movil.webp" media="(max-width: 1023px)" fetchpriority="high"/>
   <!-- Tailwind compilado (npm run build:css); antes se generaba en el navegador con el CDN -->
   <link rel="stylesheet" href="css/tailwind.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -328,7 +329,7 @@
   </nav>
 
   <!-- Side Booking Widget (Persistent CTA - Con emblema) -->
-  <aside id="side-booking-widget" class="fixed right-0 top-1/2 -translate-y-1/2 flex-col gap-base hidden min-[1920px]:flex z-[60] bg-surface-container-high p-6 border-l border-plata/50 shadow-2xl rounded-l-2xl">
+  <aside id="side-booking-widget" class="side-widget-oculto fixed right-0 top-1/2 -translate-y-1/2 flex-col gap-base hidden min-[1920px]:flex z-[60] bg-surface-container-high p-6 border-l border-plata/50 shadow-2xl rounded-l-2xl">
     <div class="flex flex-col gap-4">
       <div class="flex items-center gap-3 border-b border-plata/20 pb-3">
         <img width="128" height="128" src="assets/images/web/logo-128.webp" alt="Emblema Mariachi" class="w-10 h-10 object-contain mix-blend-lighten"/>
@@ -362,42 +363,39 @@
 
   <main id="contenido">
   <!-- 1. Hero Section -->
-  <section class="relative min-h-screen min-h-dvh flex items-start md:items-center justify-center overflow-hidden pt-28 md:pt-20 pb-24" id="hero">
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <!-- La banda se ve: velo ligero arriba, más oscuro abajo donde viven los botones -->
-      <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/55 via-black/35 to-black/85"></div>
-      <!-- El video (18 MB) solo se descarga en pantallas grandes sin ahorro de datos; en celular queda el póster -->
-      <video id="hero-video" muted loop playsinline preload="none" class="w-full h-full object-cover" poster="assets/images/web/hero-poster.webp" fetchpriority="high" data-src="assets/videos/veracruz_web.mp4" aria-hidden="true"></video>
+  <!-- Animación del escudo como portal: se arma, la cámara lo atraviesa y se ve la banda real; luego regresa al escudo (PC 16:9, celular 4:5).
+       Textos a la izquierda para que se vea la animación. Estilos en css/custom.css (.hero-jt) -->
+  <section class="hero-jt relative overflow-hidden" id="hero">
+    <div class="hero-jt__media" aria-hidden="true">
+      <!-- Copias web de los masters (~5.5 MB c/u): app.js elige la de PC o la de celular; con ahorro de datos o movimiento reducido queda el póster -->
+      <video id="hero-video" muted loop playsinline preload="none" data-src="assets/videos/jt-portal-pc-web.mp4" data-src-movil="assets/videos/jt-portal-movil-web.mp4" aria-hidden="true"></video>
+      <div class="hero-jt__velo"></div>
     </div>
-    <div class="relative z-20 text-center px-margin-mobile max-w-5xl flex flex-col items-center mx-auto">
-      <p class="inline-flex items-center px-4 py-1.5 rounded-full bg-black/60 border border-plata/40 text-on-background/90 text-sm font-semibold mb-6 backdrop-blur-md">Mariachi en Guadalajara · Atención 24/7</p>
+    <div class="hero-jt__contenido relative z-20 w-full max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop">
+    <div class="hero-jt__texto flex flex-col items-start text-left">
+      <!-- Jerarquía con 3 estilos: título (Abril), texto (Archivo) y nota (Archivo chico). Sin cajas salvo el botón principal -->
+      <p class="hero-jt__nota hero-jt__antetitulo">Mariachi en Guadalajara · Atención 24/7</p>
 
-      <h1 class="font-display-lg text-[3.25rem] leading-[1] md:text-[5.5rem] lg:text-[6rem] font-bold text-primary tracking-tight mt-6 mb-6 [text-wrap:balance] hero-legible"><span class="sr-only">Mariachi </span>Jalisco Es Tradición</h1>
-      <!-- Botonadura de plata del traje de charro: motivo propio del sitio -->
-      <div class="botonadura-h mb-6" aria-hidden="true"></div>
-      <p class="font-body-lg text-lg md:text-xl font-medium text-on-background/90 mb-8 max-w-xl text-balance hero-legible">“Elegancia y tradición en cada nota, para hacer inolvidable tu celebración”</p>
-      
-      <!-- Oferta de entrada: dato con sus condiciones -->
-      <p class="mb-8 text-center text-balance text-primary font-semibold text-sm md:text-base hero-legible">
-        <span class="material-symbols-outlined text-base align-[-3px] mr-1" aria-hidden="true">local_offer</span>
-        <span>Mariachi desde $1,899</span>
-      </p>
+      <h1 class="hero-jt__titulo font-display-lg font-bold tracking-tight [text-wrap:balance] hero-legible"><span class="sr-only">Mariachi </span><span class="hero-jt__mayus">Jalisco</span> <span class="hero-jt__es">es</span> <span class="hero-jt__mayus text-primary">Tradición</span></h1>
 
-      <!-- Una acción principal (precios y formulario) y una secundaria (chat, solo en escritorio: en celular ya está en la barra inferior) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl mb-8">
-        <a href="#reservacion" class="btn-ambar w-full sm:w-auto bg-primary text-black px-10 py-5 font-label-lg uppercase rounded-lg transition-colors text-center flex items-center justify-center gap-2 flex-1 font-bold text-sm">
+      <p class="hero-jt__lema hero-legible">“Elegancia y tradición en cada nota, para hacer inolvidable tu celebración”</p>
+
+      <!-- Oferta de entrada: el precio siempre con sus condiciones a la vista (PRODUCT.md) -->
+      <p class="hero-jt__precio hero-legible">Mariachi desde <strong>$1,899</strong></p>
+
+      <!-- Una sola acción principal; WhatsApp queda como enlace (en celular ya está en la barra inferior) -->
+      <div class="hero-jt__acciones">
+        <a href="#reservacion" id="hero-apartar" class="btn-ambar bg-primary text-black font-label-lg uppercase rounded-lg transition-colors text-center inline-flex items-center justify-center gap-2 font-bold text-sm">
           <span class="material-symbols-outlined text-xl" aria-hidden="true">event</span> Ver precios y apartar fecha
         </a>
-        <a href="https://wa.me/523320262503?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Mariachi%20Jalisco%20Es%20Tradición" target="_blank" rel="noopener" class="hidden lg:flex w-full sm:w-auto rounded-lg border border-green-500/60 bg-black/50 text-green-400 hover:bg-green-500 hover:text-black px-8 py-5 font-label-lg uppercase transition-colors text-center items-center justify-center gap-2 font-bold text-sm backdrop-blur-md">
+        <a href="https://wa.me/523320262503?text=Hola,%20quiero%20cotizar%20un%20evento%20con%20Mariachi%20Jalisco%20Es%20Tradición" target="_blank" rel="noopener" class="hero-jt__enlace hidden lg:inline-flex items-center gap-2">
           <span class="material-symbols-outlined text-xl" aria-hidden="true">chat</span> Escribir por WhatsApp
         </a>
       </div>
 
-      <!-- Flecha interactiva perfectamente alineada al centro inferior de los botones -->
-      <a href="#nosotros" class="hidden lg:inline-flex flex-col items-center justify-center gap-1 opacity-80 hover:opacity-100 text-primary transition-opacity group mt-2" title="Desplazarse hacia abajo">
-        <span class="text-xs uppercase tracking-widest font-label-sm">Conócenos</span>
-        <span class="material-symbols-outlined text-3xl" aria-hidden="true">expand_more</span>
-      </a>
+      <!-- Datos confirmados del negocio, no contadores -->
+      <p class="hero-jt__nota hero-jt__confianza">Más de 20 años<span aria-hidden="true"> · </span>Toda la ZMG<span aria-hidden="true"> · </span>Factura CFDI</p>
+    </div>
     </div>
   </section>
 
@@ -430,7 +428,7 @@
       <div class="text-center mb-14">
         <p class="seccion-antetitulo text-center">Bodas · Serenatas · Empresas</p>
         <h2 class="seccion-titulo text-center">Servicios de mariachi</h2>
-        <p class="text-on-background/70 font-body-md max-w-2xl mx-auto mt-5">Mariachi a domicilio en Guadalajara, Zapopan, Tlaquepaque, Tlajomulco, Tonalá, El Salto y toda la ZMG</p>
+        <p class="text-on-background/70 font-body-md max-w-2xl mx-auto mt-5">Mariachi en Guadalajara y la Zona Metropolitana</p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
