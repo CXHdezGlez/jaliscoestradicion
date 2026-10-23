@@ -91,7 +91,8 @@ def relacionados(slug_actual):
                ('/mariachi-para-bodas/', 'Mariachi para bodas', 'Misa, marcha nupcial, recepción y vals.'),
                ('/serenatas/', 'Serenatas', 'Pedidas, cumpleaños, Mañanitas y sorpresas.'),
                ('/eventos-corporativos/', 'Eventos corporativos', 'Congresos, cenas de gala y factura CFDI.'),
-               ('/dia-de-las-madres/', 'Serenata 10 de mayo', 'Mañanitas para mamá a domicilio.')]
+               ('/dia-de-las-madres/', 'Serenata 10 de mayo', 'Mañanitas para mamá a domicilio.'),
+               ('/mariachi-en-zapopan/', 'Mariachi en Zapopan', 'Dónde tocamos y precios en Zapopan.')]
     lis = '\n'.join(f'''<li><a href="{u}" class="block h-full bg-surface-container gala-border rounded-xl p-5 hover:border-primary transition-colors">
   <span class="flex items-center justify-between font-semibold text-primary">{t} {icon("arrow_forward", "text-base")}</span>
   <span class="block mt-1 text-sm text-on-background/70">{d}</span></a></li>''' for u, t, d in paginas if u != slug_actual)
@@ -156,7 +157,7 @@ P['precios'] = dict(
 ''', antetitulo='Fechas especiales', fondo='bg-surface-container-lowest') + seccion('Qué incluye y qué cambia el precio', lista([
         f'{b("Incluido:")} 45 minutos de música efectiva por tanda y equipo de audio profesional para eventos de hasta 300 personas.',
         f'{b("Desde una tanda:")} agendas desde una tanda, sujeto a disponibilidad.',
-        f'{b("Traslado:")} fuera de la ZMG (foráneos) se suma el costo de traslado. Validamos el domicilio de tu evento en Google Maps.',
+        f'{b("Traslado:")} fuera de la ZMG (foráneos) se suma el costo de traslado. Validamos el domicilio de tu evento en Google Maps. Si es en Zapopan, ve {enlace("/mariachi-en-zapopan/", "mariachi en Zapopan")}.',
         f'{b("Canciones especiales:")} si la que quieres no está en nuestro repertorio, pídela con al menos 15 días de anticipación.',
         f'{b("Anticipo:")} no es obligatorio, pero asegura tu fecha. El monto lo acordamos contigo por WhatsApp.'])) + seccion('Formas de pago', lista([
         'Efectivo, sin comisión', 'Transferencia SPEI o depósito',
@@ -285,6 +286,45 @@ P['dia-de-las-madres'] = dict(
     resena='jocy',
 )
 
+P['mariachi-en-zapopan'] = dict(
+    titulo='Mariachi en Zapopan a Domicilio | Jalisco Es Tradición',
+    descripcion='Mariachi en Zapopan para bodas, serenatas y eventos: tanda de 45 minutos desde $2,500 con 3 músicos y $3,700 con 5, sin costo de traslado dentro de Zapopan. Atención las 24 horas.',
+    og='Mariachi en Zapopan, Jalisco',
+    miga='Mariachi en Zapopan', evento='', wa='Hola, quiero cotizar un mariachi para un evento en Zapopan.',
+    zona=('City', 'Zapopan'),
+    antetitulo='Zapopan, Jalisco',
+    h1='Mariachi en Zapopan',
+    intro='Somos un mariachi de Zapopan, Jalisco: llegamos a tu evento en todo el municipio y en el resto de la Zona Metropolitana de Guadalajara. Te atendemos por WhatsApp y teléfono las 24 horas, los 7 días.',
+    cuerpo=lambda: seccion('Dónde tocamos en Zapopan', f'''
+<p>Zapopan es nuestra casa, así que conocemos sus colonias, sus salones y sus templos. Estos son algunos de los lugares donde tocamos seguido:</p>
+{tarjetas([
+        ('location_on', 'Colonias', 'Puerta de Hierro, Colinas de San Javier y La Cima, entre otras. Serenatas, cumpleaños y reuniones en casa.'),
+        ('church', 'Basílica de Zapopan', 'Misas, bodas y celebraciones en la Basílica de Nuestra Señora de Zapopan.'),
+        ('stars', 'Hoteles', 'Presidente InterContinental, en Ciudad del Sol: bienvenidas, cenas de gala y bodas.'),
+        ('local_activity', 'Andares y Puerta de Hierro', 'Eventos de empresa, lanzamientos y celebraciones en la zona de Andares.')])}
+<p>¿Tu evento es en otra colonia, salón o jardín de Zapopan? También llegamos. Mándanos la dirección por WhatsApp y te confirmamos el horario.</p>
+''', antetitulo='Colonias, templos y recintos') + seccion('Precios del mariachi en Zapopan', f'''
+<p>En Zapopan cobramos lo mismo que en el resto de la ZMG, sin costo de traslado. Cobramos por {b("tanda")}: 45 minutos de música en vivo, con audio profesional incluido.</p>
+{lista([f'{b("3 músicos")}, trío de gala: $2,500 por tanda', f'{b("5 músicos")}, el que más recomendamos: $3,700 por tanda', f'{b("15 músicos")}, gran orquesta mariachi: $9,700 por tanda'])}
+<p>Una hora y media son 2 tandas: con 5 músicos, $7,400. Para algo corto, como unas Mañanitas, está la {b("promoción de 8 canciones desde $1,899")}, de lunes a jueves, con canciones pre-seleccionadas.</p>
+<p>En días festivos, como el 10 de mayo, el 15 de septiembre o el 12 de diciembre, el precio por tanda es distinto. Todos los detalles en {enlace("/precios/", "precios")}.</p>
+''', antetitulo='Mismos precios, sin traslado', fondo='bg-surface-container-lowest') + seccion('Para qué eventos en Zapopan', tarjetas([
+        ('favorite', 'Bodas', f'De la misa en la Basílica al vals en la recepción. Ver {enlace("/mariachi-para-bodas/", "mariachi para bodas")}.'),
+        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas. Ver {enlace("/serenatas/", "serenatas")}.'),
+        ('domain', 'Eventos de empresa', f'Congresos, cenas de gala y aniversarios, con factura CFDI. Ver {enlace("/eventos-corporativos/", "eventos corporativos")}.'),
+        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Ver {enlace("/dia-de-las-madres/", "serenata 10 de mayo")}.')])
+        + '\n<p>También tocamos en cumpleaños, convivencias familiares, XV años, bautizos, graduaciones, misas y funerales.</p>', antetitulo='Bodas · Serenatas · Empresas') + seccion('Cómo apartar tu mariachi en Zapopan', '''
+<ol class="space-y-4">
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">1</span><span>Mándanos por WhatsApp la fecha, la hora y la dirección del evento.</span></li>
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">2</span><span>Elige el número de músicos y cuántas tandas necesitas.</span></li>
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">3</span><span>Te confirmamos disponibilidad y precio final. El anticipo no es obligatorio, pero asegura tu fecha.</span></li>
+</ol>''', fondo='bg-surface-container-lowest'),
+    faq=[('¿Cuánto cobra un mariachi en Zapopan?', 'Con nosotros, una tanda de 45 minutos cuesta $2,500 con 3 músicos, $3,700 con 5 y $9,700 con 15, igual que en el resto de la ZMG. De lunes a jueves también hay una promoción de 8 canciones desde $1,899.'),
+         ('¿Pueden llegar hoy?', 'Sí, según la disponibilidad de la agenda y el tiempo de traslado. Escríbenos por WhatsApp con la dirección y la hora y te confirmamos en ese momento.'),
+         ('¿Cobran traslado dentro de Zapopan?', 'No. Zapopan está dentro de la Zona Metropolitana de Guadalajara, así que aplica el precio normal por tanda. Solo los eventos fuera de la ZMG llevan costo de traslado.')],
+    resena=None,
+)
+
 # ---------- plantilla ----------
 def pagina(slug, d):
     url = f'{DOM}/{slug}/'
@@ -306,6 +346,8 @@ def pagina(slug, d):
         'provider': {'@id': DOM + '/#negocio'},
         'areaServed': {'@type': 'AdministrativeArea', 'name': 'Zona Metropolitana de Guadalajara'},
     }
+    if d.get('zona'):
+        servicio['areaServed'] = {'@type': d['zona'][0], 'name': d['zona'][1]}
     if slug == 'precios':
         servicio['hasOfferCatalog'] = {'@type': 'OfferCatalog', 'name': 'Precios por tanda de 45 minutos', 'itemListElement': [
             {'@type': 'Offer', 'name': n, 'price': p, 'priceCurrency': 'MXN'} for n, p in
