@@ -235,6 +235,22 @@
    "mainEntity": [
     {
      "@type": "Question",
+     "name": "¿Cuánto cobra un mariachi por hora?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cobramos por tanda de 45 minutos: desde $2,500 con 3 músicos y $3,700 con 5. Una hora y media son 2 tandas. En días festivos el precio es distinto."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Tienen mariachi económico?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí: la promoción de 8 canciones desde $1,899, de lunes a jueves, dentro de la ZMG. Las condiciones y fechas disponibles te las damos por WhatsApp."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "¿Con cuánto tiempo de anticipación puedo reservar?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -246,7 +262,7 @@
      "name": "¿Puedo pagar en efectivo?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sí, es la forma más común y no tiene comisión. Con tarjeta o meses sin intereses se cobra la comisión del servicio de pago."
+      "text": "Sí, es la forma más común y no tiene comisión. Con tarjeta se suma un 5% por comisión; a meses sin intereses aplica la comisión del servicio de pago."
      }
     },
     {
@@ -408,6 +424,7 @@
         <div class="botonadura-h botonadura-corta mt-5" aria-hidden="true"></div>
         <div class="space-y-6 font-body-lg text-body-lg text-on-background/80 leading-relaxed">
           <p>Somos <strong>Jalisco Es Tradición</strong>, un mariachi jalisciense con más de 20 años tocando en bodas, serenatas, fiestas y eventos de empresa en Guadalajara y toda la ZMG. Llegamos en traje de charro negro con botonadura de plata, con guitarrón, vihuela, violines y trompetas, y arpa si tu evento la pide.</p>
+          <p>Somos uno de los pocos mariachis en Guadalajara que publican sus precios: los encuentras en <a href="/precios/" class="text-primary underline underline-offset-4 hover:text-on-background">precios</a>.</p>
           <p>Tocamos las canciones de siempre, las que todos cantan, y también lo que suena hoy. ¿Quieres una canción que no está en nuestro repertorio? Pídela con al menos 15 días de anticipación y la preparamos para ti.</p>
         </div>
       </div>
@@ -427,7 +444,7 @@
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div class="text-center mb-14">
         <p class="seccion-antetitulo text-center">Bodas · Serenatas · Empresas</p>
-        <h2 class="seccion-titulo text-center">Servicios de mariachi</h2>
+        <h2 class="seccion-titulo text-center">Mariachi a domicilio para tu evento</h2>
         <p class="text-on-background/70 font-body-md max-w-2xl mx-auto mt-5">Mariachi en Guadalajara y la Zona Metropolitana</p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -607,6 +624,7 @@
         </div>
 
       </div>
+      <p class="text-on-background/70 font-body-md max-w-2xl mx-auto mt-12 text-center">También tocamos en cumpleaños, XV años, bautizos, graduaciones, misas, funerales, convivencias sociales y familiares, y eventos especiales.</p>
     </div>
   </section>
 
@@ -1125,6 +1143,24 @@
         <h2 class="seccion-titulo text-center">Preguntas Frecuentes</h2>
       </div>
       <div class="border-t border-plata/20">
+        <!-- FAQ por hora -->
+        <div class="faq-item border-b border-plata/20">
+          <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
+            <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Cuánto cobra un mariachi por hora?</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Cobramos por tanda de 45 minutos: desde $2,500 con 3 músicos y $3,700 con 5. Una hora y media son 2 tandas. En días festivos el precio es distinto; todos los precios están en <a href="/precios/" class="text-primary underline underline-offset-4 hover:text-on-background">precios</a>.</div></div>
+        </div>
+
+        <!-- FAQ económico -->
+        <div class="faq-item border-b border-plata/20">
+          <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
+            <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Tienen mariachi económico?</span>
+            <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí: la promoción de 8 canciones desde $1,899, de lunes a jueves, dentro de la ZMG. Las condiciones y fechas disponibles te las damos por WhatsApp.</div></div>
+        </div>
+
         <!-- FAQ 1: Anticipación -->
         <div class="faq-item border-b border-plata/20">
           <button class="faq-button flex justify-between items-center gap-4 w-full text-left py-5 min-h-[56px] group">
@@ -1140,7 +1176,7 @@
             <span class="font-body-lg text-on-background group-hover:text-primary transition-colors">¿Puedo pagar en efectivo?</span>
             <span class="material-symbols-outlined text-plata transition-transform duration-200 ease-salida" aria-hidden="true">expand_more</span>
           </button>
-          <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí, es la forma más común y no tiene comisión. Con tarjeta o meses sin intereses se cobra la comisión del servicio de pago.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner pb-6 pr-10 text-on-background/75 font-body-md leading-relaxed">Sí, es la forma más común y no tiene comisión. Con tarjeta se suma un 5% por comisión; a meses sin intereses aplica la comisión del servicio de pago.</div></div>
         </div>
 
         <!-- FAQ 3: Anticipo -->

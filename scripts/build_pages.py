@@ -103,14 +103,14 @@ PRECIOS_LINK = f'<p>Todos los detalles en {enlace("/precios/", "precios")}.</p>'
 P = {}
 
 P['precios'] = dict(
-    titulo='Precios de Mariachi en Guadalajara 2026 | Jalisco Es Tradición',
-    descripcion='Cuánto cuesta un mariachi en Guadalajara: $2,500 por tanda con 3 músicos, $3,700 con 5 y $9,700 con 15. Paquete de 8 canciones desde $1,899.',
-    og='Precios del mariachi por tanda en Guadalajara',
+    titulo='Precio de Mariachi por Hora en Guadalajara 2026 | Jalisco Es Tradición',
+    descripcion='Cuánto cobra un mariachi por hora en Guadalajara: tanda de 45 minutos desde $2,500 con 3 músicos y $3,700 con 5. Promoción de 8 canciones desde $1,899 y precios de días festivos.',
+    og='Precio de mariachi por hora y por tanda en Guadalajara',
     miga='Precios', evento='', wa='Hola, quiero cotizar un mariachi. Vi los precios en su página.',
     antetitulo='Precios publicados, sin sorpresas',
     h1='Precios de mariachi en Guadalajara',
-    intro=f'Cobramos por {b("tanda")}: 45 minutos de música en vivo con audio profesional incluido. Estos son nuestros precios en la Zona Metropolitana de Guadalajara; el precio final te lo confirmamos por WhatsApp según la fecha y la ubicación.',
-    cuerpo=lambda: seccion('Precio por tanda', '''
+    intro=f'¿Buscas mariachi económico en Guadalajara? Cobramos por {b("tanda")}: 45 minutos de música en vivo con audio profesional incluido. Aquí están nuestros precios ordinarios en la Zona Metropolitana de Guadalajara. Escríbenos por WhatsApp con tu fecha y ubicación y te confirmamos disponibilidad y precio final.',
+    cuerpo=lambda: seccion('Precio de mariachi por tanda y por hora', '''
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
   <caption class="sr-only">Precio por tanda de 45 minutos según el número de músicos</caption>
@@ -123,20 +123,48 @@ P['precios'] = dict(
   </tbody>
 </table>
 </div>
-<p class="text-sm text-on-background/65">Precios en pesos mexicanos (MXN), dentro de la ZMG. Agrupaciones de 4 a 14 músicos: el precio te lo confirmamos por WhatsApp.</p>
-''', antetitulo='Por agrupación') + seccion('Paquete de 8 canciones, desde $1,899', f'''
-<p>Para un detalle rápido entre semana: {b("8 canciones pre-seleccionadas")} desde $1,899. Es ideal para unas Mañanitas o una sorpresa corta.</p>
-{lista(["Solo de lunes a jueves", "Solo dentro de la Zona Metropolitana de Guadalajara", "Sin pilón (canciones extra de cortesía)", "El precio según el número de músicos se confirma por WhatsApp"])}
-<p>También tenemos {b("promociones de lunes a jueves")}; las condiciones y fechas disponibles te las damos por WhatsApp.</p>
-''', fondo='bg-surface-container-lowest') + seccion('Qué incluye y qué cambia el precio', lista([
+<p class="text-sm text-on-background/65">Precios ordinarios en pesos mexicanos (MXN), dentro de la ZMG. No aplican en promociones ni en días festivos. Agrupaciones de 4 a 14 músicos: el precio te lo confirmamos por WhatsApp.</p>
+''', antetitulo='Precios ordinarios') + seccion('¿Cuánto cobra un mariachi por hora en Guadalajara?', f'''
+<p>Cobramos por tanda: {b("45 minutos de música en vivo")}. Una hora y media son 2 tandas. Con 5 músicos, 1 tanda cuesta $3,700 y 2 tandas (1 h 30 min) $7,400, dentro de la ZMG.</p>
+<p>Agendas desde una tanda, sujeto a disponibilidad. Si necesitas otro horario o algo fuera de lo común, escríbenos por WhatsApp y lo vemos contigo.</p>
+''', antetitulo='Tandas y horas', fondo='bg-surface-container-lowest') + seccion('Promoción de 8 canciones, desde $1,899', f'''
+<p>Para algo corto, como unas Mañanitas o una sorpresa: {b("8 canciones pre-seleccionadas")}, unos 25 minutos de música, desde $1,899.</p>
+{lista(["De lunes a jueves", "Dentro de la Zona Metropolitana de Guadalajara", "Las canciones ya vienen seleccionadas", "No incluye canción de cortesía"])}
+<p>Las condiciones y fechas disponibles de esta y otras promociones te las damos por {enlace(WA + quote("Hola, quiero información de la promoción de 8 canciones."), "WhatsApp")}.</p>
+''', antetitulo='Promoción entre semana') + seccion('Precios en días festivos', f'''
+<p>En estas fechas el precio por tanda es distinto:</p>
+{lista(["10 de mayo, Día de las Madres", "15 de septiembre, de 6 p. m. a 12 a. m. del 16", "12 de diciembre, día de la Virgen de Guadalupe", "24 de diciembre, de 10 p. m. a 1 a. m.", "31 de diciembre al 1 de enero"])}
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+  <caption class="sr-only">Precio por tanda de 45 minutos en días festivos, según el número de integrantes</caption>
+  <thead><tr class="border-b border-plata/30 text-plata text-sm uppercase tracking-wider">
+    <th scope="col" class="py-3 pr-4 font-semibold">Agrupación</th><th scope="col" class="py-3 font-semibold">1 tanda (45 min)</th></tr></thead>
+  <tbody class="text-on-background">
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">3 integrantes</th><td class="py-4 text-primary font-bold text-lg">$2,700</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">4 integrantes</th><td class="py-4 text-primary font-bold text-lg">$3,400</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">5 integrantes</th><td class="py-4 text-primary font-bold text-lg">$4,100</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">6 integrantes</th><td class="py-4 text-primary font-bold text-lg">$4,800</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">7 integrantes</th><td class="py-4 text-primary font-bold text-lg">$5,500</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">8 integrantes</th><td class="py-4 text-primary font-bold text-lg">$6,200</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">9 integrantes</th><td class="py-4 text-primary font-bold text-lg">$6,900</td></tr>
+    <tr class="border-b border-plata/15"><th scope="row" class="py-4 pr-4 font-semibold">10 integrantes</th><td class="py-4 text-primary font-bold text-lg">$7,600</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="text-sm text-on-background/65">Precios en pesos mexicanos (MXN). El costo puede variar según la ubicación del evento.</p>
+<p>{b("El 10 de mayo")} es un día de altísima demanda y los horarios pueden cambiar a última hora: apártalo con tiempo.</p>
+''', antetitulo='Fechas especiales', fondo='bg-surface-container-lowest') + seccion('Qué incluye y qué cambia el precio', lista([
         f'{b("Incluido:")} 45 minutos de música efectiva por tanda y equipo de audio profesional para eventos de hasta 300 personas.',
+        f'{b("Desde una tanda:")} agendas desde una tanda, sujeto a disponibilidad.',
         f'{b("Traslado:")} fuera de la ZMG (foráneos) se suma el costo de traslado. Validamos el domicilio de tu evento en Google Maps.',
         f'{b("Canciones especiales:")} si la que quieres no está en nuestro repertorio, pídela con al menos 15 días de anticipación.',
         f'{b("Anticipo:")} no es obligatorio, pero asegura tu fecha. El monto lo acordamos contigo por WhatsApp.'])) + seccion('Formas de pago', lista([
         'Efectivo, sin comisión', 'Transferencia SPEI o depósito',
-        'Tarjeta, o 3, 9 y 12 meses sin intereses con Mercado Pago (aplica la comisión del servicio de pago)',
+        'Tarjeta, con 5% adicional por comisión', '3, 9 y 12 meses sin intereses con Mercado Pago (aplica la comisión del servicio de pago)',
         'Factura fiscal (CFDI) para empresas y particulares']), fondo='bg-surface-container-lowest'),
-    faq=[('¿Cuánto cuesta un mariachi en Guadalajara?', 'Con nosotros, una tanda de 45 minutos cuesta $2,500 con 3 músicos, $3,700 con 5 y $9,700 con 15, dentro de la Zona Metropolitana de Guadalajara. De lunes a jueves también hay un paquete de 8 canciones desde $1,899.'),
+    faq=[('¿Cuánto cuesta un mariachi en Guadalajara?', 'Con nosotros, una tanda de 45 minutos cuesta $2,500 con 3 músicos, $3,700 con 5 y $9,700 con 15, dentro de la Zona Metropolitana de Guadalajara. De lunes a jueves también hay una promoción de 8 canciones desde $1,899.'),
+         ('¿Cuánto cobra un mariachi por hora?', 'Cobramos por tanda de 45 minutos: desde $2,500 con 3 músicos y $3,700 con 5. Una hora y media son 2 tandas; con 5 músicos, $7,400 dentro de la ZMG.'),
+         ('¿El precio cambia en días festivos?', 'Sí. El 10 de mayo, el 15 de septiembre por la noche, el 12 de diciembre, la noche del 24 de diciembre y del 31 de diciembre al 1 de enero la tanda cuesta desde $2,700 con 3 integrantes y $4,100 con 5.'),
          ('¿Qué es una tanda?', 'Son 45 minutos de música en vivo, con audio profesional incluido. Puedes contratar una o varias tandas seguidas.'),
          ('¿Cuánto cuesta con 4, 6 u otro número de músicos?', 'Tenemos agrupaciones de 3 a 15 músicos. Publicamos el precio de 3, 5 y 15; para cualquier otro tamaño te damos el precio por WhatsApp.'),
          ('¿Cobran traslado?', 'Dentro de la ZMG aplica el precio por tanda. Fuera de la ZMG se suma el costo de traslado, que te confirmamos por WhatsApp con la dirección de tu evento.')],
@@ -282,7 +310,7 @@ def pagina(slug, d):
         servicio['hasOfferCatalog'] = {'@type': 'OfferCatalog', 'name': 'Precios por tanda de 45 minutos', 'itemListElement': [
             {'@type': 'Offer', 'name': n, 'price': p, 'priceCurrency': 'MXN'} for n, p in
             [('Tanda de 45 minutos, 3 músicos', '2500'), ('Tanda de 45 minutos, 5 músicos', '3700'), ('Tanda de 45 minutos, 15 músicos', '9700')]] + [
-            {'@type': 'Offer', 'name': 'Paquete de 8 canciones (lunes a jueves, dentro de la ZMG)',
+            {'@type': 'Offer', 'name': 'Promoción de 8 canciones (lunes a jueves, dentro de la ZMG)',
              'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': '1899', 'priceCurrency': 'MXN'}}]}
     grafo = [
         {'@type': 'BreadcrumbList', 'itemListElement': [
