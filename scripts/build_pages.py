@@ -310,10 +310,10 @@ P['mariachi-en-zapopan'] = dict(
 <p>Una hora y media son 2 tandas: con 5 músicos, $7,400. Para algo corto, como unas Mañanitas, está la {b("promoción de 8 canciones desde $1,899")}, de lunes a jueves, con canciones pre-seleccionadas.</p>
 <p>En días festivos, como el 10 de mayo, el 15 de septiembre o el 12 de diciembre, el precio por tanda es distinto. Todos los detalles en {enlace("/precios/", "precios")}.</p>
 ''', antetitulo='Mismos precios, sin traslado', fondo='bg-surface-container-lowest') + seccion('Para qué eventos en Zapopan', tarjetas([
-        ('favorite', 'Bodas', f'De la misa en la Basílica al vals en la recepción. Ver {enlace("/mariachi-para-bodas/", "mariachi para bodas")}.'),
-        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas. Ver {enlace("/serenatas/", "serenatas")}.'),
-        ('domain', 'Eventos de empresa', f'Congresos, cenas de gala y aniversarios, con factura CFDI. Ver {enlace("/eventos-corporativos/", "eventos corporativos")}.'),
-        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Ver {enlace("/dia-de-las-madres/", "serenata 10 de mayo")}.')])
+        ('favorite', 'Bodas', f'De la misa en la Basílica al vals en la recepción. Atendemos bodas en Zapopan y toda la ZMG: {enlace("/mariachi-para-bodas/", "ver mariachi para bodas")}.'),
+        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas. Atendemos serenatas en Zapopan y toda la ZMG: {enlace("/serenatas/", "ver serenatas")}.'),
+        ('domain', 'Eventos de empresa', f'Congresos, cenas de gala y aniversarios, con factura CFDI. Atendemos eventos de empresa en Zapopan y toda la ZMG: {enlace("/eventos-corporativos/", "ver eventos corporativos")}.'),
+        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Atendemos serenatas del 10 de mayo en Zapopan y toda la ZMG: {enlace("/dia-de-las-madres/", "ver serenata 10 de mayo")}.')])
         + '\n<p>También tocamos en cumpleaños, convivencias familiares, XV años, bautizos, graduaciones, misas y funerales.</p>', antetitulo='Bodas · Serenatas · Empresas') + seccion('Cómo apartar tu mariachi en Zapopan', '''
 <ol class="space-y-4">
   <li class="flex items-center gap-4"><span class="paso-concho shrink-0">1</span><span>Mándanos por WhatsApp la fecha, la hora y la dirección del evento.</span></li>
@@ -349,10 +349,10 @@ P['mariachi-en-tlaquepaque'] = dict(
 <p>Una hora y media son 2 tandas: con 5 músicos, $7,400. Para unas Mañanitas o una sorpresa corta está la {b("promoción de 8 canciones desde $1,899")}, de lunes a jueves, con canciones pre-seleccionadas.</p>
 <p>En días festivos, como el 10 de mayo, el 15 de septiembre o el 12 de diciembre, el precio por tanda es distinto. Todos los detalles en {enlace("/precios/", "precios")}.</p>
 ''', antetitulo='Mismos precios, sin traslado', fondo='bg-surface-container-lowest') + seccion('Para qué eventos en Tlaquepaque', tarjetas([
-        ('favorite', 'Bodas', f'De la misa en el centro histórico al vals en el salón. Ver {enlace("/mariachi-para-bodas/", "mariachi para bodas")}.'),
-        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas en casa. Ver {enlace("/serenatas/", "serenatas")}.'),
-        ('domain', 'Eventos de empresa', f'Comidas, aniversarios y visitas de clientes, con factura CFDI. Ver {enlace("/eventos-corporativos/", "eventos corporativos")}.'),
-        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Ver {enlace("/dia-de-las-madres/", "serenata 10 de mayo")}.')])
+        ('favorite', 'Bodas', f'De la misa en el centro histórico al vals en el salón. Atendemos bodas en Tlaquepaque y toda la ZMG: {enlace("/mariachi-para-bodas/", "ver mariachi para bodas")}.'),
+        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas en casa. Atendemos serenatas en Tlaquepaque y toda la ZMG: {enlace("/serenatas/", "ver serenatas")}.'),
+        ('domain', 'Eventos de empresa', f'Comidas, aniversarios y visitas de clientes, con factura CFDI. Atendemos eventos de empresa en Tlaquepaque y toda la ZMG: {enlace("/eventos-corporativos/", "ver eventos corporativos")}.'),
+        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Atendemos serenatas del 10 de mayo en Tlaquepaque y toda la ZMG: {enlace("/dia-de-las-madres/", "ver serenata 10 de mayo")}.')])
         + '\n<p>También tocamos en cumpleaños, convivencias familiares, XV años, bautizos, graduaciones, misas y funerales.</p>', antetitulo='Bodas · Serenatas · Empresas') + seccion('Cómo apartar tu mariachi en Tlaquepaque', '''
 <ol class="space-y-4">
   <li class="flex items-center gap-4"><span class="paso-concho shrink-0">1</span><span>Mándanos por WhatsApp la fecha, la hora y la dirección del evento.</span></li>
