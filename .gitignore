@@ -15,6 +15,9 @@ PRODUCT.md
 assets/images/*.jpg
 assets/images/*.png
 assets/videos/Veracruz I Para web.mp4
+# Versiones del hero que el sitio no usa (usa jt-portal-*-web.mp4)
+assets/videos/jt-hero-*.mp4
+assets/videos/jt-portal-*-master.mp4
 
 # Archivos de versiones anteriores que la página ya no carga
 css/reservation-styles.css
