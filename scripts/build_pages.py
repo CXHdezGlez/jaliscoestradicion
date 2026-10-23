@@ -92,7 +92,8 @@ def relacionados(slug_actual):
                ('/serenatas/', 'Serenatas', 'Pedidas, cumpleaños, Mañanitas y sorpresas.'),
                ('/eventos-corporativos/', 'Eventos corporativos', 'Congresos, cenas de gala y factura CFDI.'),
                ('/dia-de-las-madres/', 'Serenata 10 de mayo', 'Mañanitas para mamá a domicilio.'),
-               ('/mariachi-en-zapopan/', 'Mariachi en Zapopan', 'Dónde tocamos y precios en Zapopan.')]
+               ('/mariachi-en-zapopan/', 'Mariachi en Zapopan', 'Dónde tocamos y precios en Zapopan.'),
+               ('/mariachi-en-tlaquepaque/', 'Mariachi en Tlaquepaque', 'Del centro a Las Juntas y Toluquilla.')]
     lis = '\n'.join(f'''<li><a href="{u}" class="block h-full bg-surface-container gala-border rounded-xl p-5 hover:border-primary transition-colors">
   <span class="flex items-center justify-between font-semibold text-primary">{t} {icon("arrow_forward", "text-base")}</span>
   <span class="block mt-1 text-sm text-on-background/70">{d}</span></a></li>''' for u, t, d in paginas if u != slug_actual)
@@ -157,7 +158,7 @@ P['precios'] = dict(
 ''', antetitulo='Fechas especiales', fondo='bg-surface-container-lowest') + seccion('Qué incluye y qué cambia el precio', lista([
         f'{b("Incluido:")} 45 minutos de música efectiva por tanda y equipo de audio profesional para eventos de hasta 300 personas.',
         f'{b("Desde una tanda:")} agendas desde una tanda, sujeto a disponibilidad.',
-        f'{b("Traslado:")} fuera de la ZMG (foráneos) se suma el costo de traslado. Validamos el domicilio de tu evento en Google Maps. Si es en Zapopan, ve {enlace("/mariachi-en-zapopan/", "mariachi en Zapopan")}.',
+        f'{b("Traslado:")} fuera de la ZMG (foráneos) se suma el costo de traslado. Validamos el domicilio de tu evento en Google Maps. Si es en Zapopan o Tlaquepaque, ve {enlace("/mariachi-en-zapopan/", "mariachi en Zapopan")} o {enlace("/mariachi-en-tlaquepaque/", "mariachi en Tlaquepaque")}.',
         f'{b("Canciones especiales:")} si la que quieres no está en nuestro repertorio, pídela con al menos 15 días de anticipación.',
         f'{b("Anticipo:")} no es obligatorio, pero asegura tu fecha. El monto lo acordamos contigo por WhatsApp.'])) + seccion('Formas de pago', lista([
         'Efectivo, sin comisión', 'Transferencia SPEI o depósito',
@@ -322,6 +323,46 @@ P['mariachi-en-zapopan'] = dict(
     faq=[('¿Cuánto cobra un mariachi en Zapopan?', 'Con nosotros, una tanda de 45 minutos cuesta $2,500 con 3 músicos, $3,700 con 5 y $9,700 con 15, igual que en el resto de la ZMG. De lunes a jueves también hay una promoción de 8 canciones desde $1,899.'),
          ('¿Pueden llegar hoy?', 'Sí, según la disponibilidad de la agenda y el tiempo de traslado. Escríbenos por WhatsApp con la dirección y la hora y te confirmamos en ese momento.'),
          ('¿Cobran traslado dentro de Zapopan?', 'No. Zapopan está dentro de la Zona Metropolitana de Guadalajara, así que aplica el precio normal por tanda. Solo los eventos fuera de la ZMG llevan costo de traslado.')],
+    resena=None,
+)
+
+P['mariachi-en-tlaquepaque'] = dict(
+    titulo='Mariachi en Tlaquepaque a Domicilio | Jalisco Es Tradición',
+    descripcion='Mariachi en Tlaquepaque para bodas, serenatas y eventos, del centro a Las Juntas y Toluquilla. Tanda de 45 minutos desde $2,500 con 3 músicos, sin costo de traslado.',
+    og='Mariachi en Tlaquepaque, Jalisco',
+    miga='Mariachi en Tlaquepaque', evento='', wa='Hola, quiero cotizar un mariachi para un evento en Tlaquepaque.',
+    zona=('City', 'San Pedro Tlaquepaque'),
+    antetitulo='San Pedro Tlaquepaque, Jalisco',
+    h1='Mariachi en Tlaquepaque',
+    intro='En Tlaquepaque el mariachi se escucha todos los días alrededor del Parián. Si lo quieres en tu propia fiesta, llegamos a tu evento en cualquier parte del municipio, del centro a Las Juntas y Toluquilla. Te atendemos por WhatsApp y teléfono las 24 horas, los 7 días.',
+    cuerpo=lambda: seccion('Dónde llegamos en Tlaquepaque', f'''
+<p>Tlaquepaque es uno de los lugares con más tradición de mariachi en Jalisco. Llevamos esa misma música a tu evento, donde sea que lo celebres:</p>
+{tarjetas([
+        ('church', 'Centro histórico', 'Misas y bodas en la Parroquia de San Pedro y el Santuario de la Soledad, junto al Jardín Hidalgo.'),
+        ('local_activity', 'Recintos y andadores', 'Eventos en el centro, como el Centro Cultural El Refugio, y celebraciones en casas y restaurantes cerca del Andador Independencia.'),
+        ('location_on', 'Delegaciones y colonias', 'Las Juntas, Santa María Tequepexpan, Toluquilla y el resto del municipio: serenatas, cumpleaños y reuniones en casa.'),
+        ('celebration', 'Salones y jardines', 'Bodas, XV años y fiestas en salones y jardines de eventos de todo Tlaquepaque.')])}
+<p>Salimos desde Zapopan: al centro de Tlaquepaque son unos 12 a 16 kilómetros, de 20 a 30 minutos según el tráfico. Por eso, si nos necesitas el mismo día, escríbenos con la dirección y la hora en cuanto lo decidas.</p>
+''', antetitulo='Centro, delegaciones y colonias') + seccion('Precios del mariachi en Tlaquepaque', f'''
+<p>Tlaquepaque está dentro de la Zona Metropolitana de Guadalajara, así que cobramos lo mismo que en el resto de la ZMG, sin costo de traslado. Cobramos por {b("tanda")}: 45 minutos de música en vivo, con audio profesional incluido.</p>
+{lista([f'{b("3 músicos")}, trío de gala: $2,500 por tanda', f'{b("5 músicos")}, el que más recomendamos: $3,700 por tanda', f'{b("15 músicos")}, gran orquesta mariachi: $9,700 por tanda'])}
+<p>Una hora y media son 2 tandas: con 5 músicos, $7,400. Para unas Mañanitas o una sorpresa corta está la {b("promoción de 8 canciones desde $1,899")}, de lunes a jueves, con canciones pre-seleccionadas.</p>
+<p>En días festivos, como el 10 de mayo, el 15 de septiembre o el 12 de diciembre, el precio por tanda es distinto. Todos los detalles en {enlace("/precios/", "precios")}.</p>
+''', antetitulo='Mismos precios, sin traslado', fondo='bg-surface-container-lowest') + seccion('Para qué eventos en Tlaquepaque', tarjetas([
+        ('favorite', 'Bodas', f'De la misa en el centro histórico al vals en el salón. Ver {enlace("/mariachi-para-bodas/", "mariachi para bodas")}.'),
+        ('celebration', 'Serenatas', f'Pedidas de mano, cumpleaños, aniversarios y Mañanitas en casa. Ver {enlace("/serenatas/", "serenatas")}.'),
+        ('domain', 'Eventos de empresa', f'Comidas, aniversarios y visitas de clientes, con factura CFDI. Ver {enlace("/eventos-corporativos/", "eventos corporativos")}.'),
+        ('event', '10 de mayo', f'Mañanitas para mamá en su casa. Ver {enlace("/dia-de-las-madres/", "serenata 10 de mayo")}.')])
+        + '\n<p>También tocamos en cumpleaños, convivencias familiares, XV años, bautizos, graduaciones, misas y funerales.</p>', antetitulo='Bodas · Serenatas · Empresas') + seccion('Cómo apartar tu mariachi en Tlaquepaque', '''
+<ol class="space-y-4">
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">1</span><span>Mándanos por WhatsApp la fecha, la hora y la dirección del evento.</span></li>
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">2</span><span>Si es en el centro, dinos si el lugar está sobre un andador peatonal, para planear la llegada.</span></li>
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">3</span><span>Elige el número de músicos y cuántas tandas necesitas.</span></li>
+  <li class="flex items-center gap-4"><span class="paso-concho shrink-0">4</span><span>Te confirmamos disponibilidad y precio final. El anticipo no es obligatorio, pero asegura tu fecha.</span></li>
+</ol>''', fondo='bg-surface-container-lowest'),
+    faq=[('¿Cuánto cuesta 1 hora de mariachi en Tlaquepaque?', 'Cobramos por tanda de 45 minutos: $2,500 con 3 músicos y $3,700 con 5, igual que en el resto de la ZMG. Una hora y media son 2 tandas; con 5 músicos, $7,400. Si necesitas otro horario, escríbenos por WhatsApp y lo vemos contigo.'),
+         ('¿Llegan al centro de Tlaquepaque?', 'Sí, al centro histórico y a cualquier parte del municipio. Si el lugar está sobre un andador peatonal, avísanos al apartar para planear la llegada.'),
+         ('¿Cobran traslado a Tlaquepaque?', 'No. Tlaquepaque está dentro de la Zona Metropolitana de Guadalajara, así que aplica el precio normal por tanda. Solo los eventos fuera de la ZMG llevan costo de traslado.')],
     resena=None,
 )
 
