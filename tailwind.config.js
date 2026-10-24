@@ -42,6 +42,10 @@ module.exports = {
         'surface-variant': '#353534',
         'surface-tint': '#e9c349',
         'primary': '#E7A33E',
+        // Verde de WhatsApp: solo para los botones que abren el chat
+        'whatsapp': '#22c55e',
+        'whatsapp-claro': '#4ade80',
+        'whatsapp-oscuro': '#16a34a',
         'on-tertiary': '#3f2e00',
         'tertiary-fixed-dim': '#e5c277',
         'outline': '#99907c',

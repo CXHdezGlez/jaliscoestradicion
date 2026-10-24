@@ -316,15 +316,20 @@ a, button, input, select, textarea, label, summary {
   font-synthesis: none;
 }
 
-/* Movimiento reducido: sin animaciones ni transiciones para quien lo pida en su sistema */
+/* Movimiento reducido: nada se desplaza ni cambia de escala; los cambios de color y los fundidos se quedan para marcar el estado */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html, body { scroll-behavior: auto; }
+  .faq-answer.open .faq-answer-inner { animation-name: faqFundido; }
+  .gala-glow, .presionable, .btn-ambar, .tarjeta-servicio, .modal-backdrop > div, .transition-transform {
+    transition-property: opacity, color, background-color, border-color, box-shadow;
   }
+  .presionable:active, .btn-ambar:active, .tarjeta-servicio:hover, .modal-backdrop > div,
+  [class*="hover:scale"], [class*="hover:translate"] { transform: none !important; }
 }
+@keyframes faqFundido { from { opacity: 0; } to { opacity: 1; } }
+
+/* Texto corrido de las páginas de servicio: líneas de lectura cómoda; las tarjetas usan el ancho completo */
+.prosa > p, .prosa > ol, .prosa blockquote { max-width: 62ch; }
 
 /* =====================================================================
    Pulido visual (ui-ux-pro-max): misma identidad «Traje de charro»,
