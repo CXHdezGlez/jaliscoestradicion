@@ -596,6 +596,8 @@ for slug, d in P.items():
 # sitemap.xml: la portada y cada página generada, con <lastmod> = fecha de modificación de su archivo
 from datetime import date
 entradas = [('', 'index.html')] + [(f'{slug}/', os.path.join(slug, 'index.html')) for slug in P]
+# Páginas hechas a mano que también van al sitemap
+entradas += [('tarjeta/', os.path.join('tarjeta', 'index.html'))]
 urls = '\n'.join(
     f'  <url>\n    <loc>{DOM}/{ruta}</loc>\n    <lastmod>{date.fromtimestamp(os.path.getmtime(os.path.join(ROOT, archivo))).isoformat()}</lastmod>\n  </url>'
     for ruta, archivo in entradas)
