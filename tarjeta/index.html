@@ -209,8 +209,8 @@
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      padding: 0 14px;
+      gap: 12px;
+      padding: 0 16px;
       width: 100%;
       z-index: 2;
     }
@@ -220,10 +220,10 @@
       display: flex;
       align-items: center;
       width: 100%;
-      min-height: 92px;
-      padding: 12px 22px;
+      min-height: 72px;
+      padding: 10px 20px 10px 12px;
       background: linear-gradient(145deg, #090909 0%, #030303 100%);
-      border: 2.2px solid var(--gold-primary);
+      border: 2px solid var(--gold-primary);
       border-radius: 999px;
       text-decoration: none;
       color: var(--gold-primary);
@@ -271,15 +271,15 @@
 
     /* Círculo Dorado Izquierdo para el Icono */
     .icon-circle {
-      width: 66px;
-      height: 66px;
-      min-width: 66px;
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
       border-radius: 50%;
       background: var(--gold-fill);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 22px;
+      margin-right: 18px;
       color: var(--ink);
       box-shadow: var(--shadow-sm), var(--gold-sheen);
       transition: transform 0.3s var(--ease-out);
@@ -291,14 +291,14 @@
     }
 
     .icon-circle svg {
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       display: block;
     }
 
     /* Texto del Botón (Dorado, Negrita y Subrayado) */
     .btn-label {
-      font-size: 1.24rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--gold-primary);
       text-decoration: underline;
@@ -315,9 +315,68 @@
       color: var(--gold-light);
     }
 
+    /* Redes sociales: acción secundaria, círculos de contorno (los botones principales van rellenos) */
+    .social-section {
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold-text-soft);
+      letter-spacing: 0.02em;
+    }
+
+    .social-list {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .social-link {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-primary);
+      background: linear-gradient(145deg, #0c0b08 0%, #030303 100%);
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease-out), background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      background: var(--gold-fill-hover);
+      border-color: var(--gold-light);
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .social-link:focus-visible {
+      outline: 3px solid var(--gold-bright);
+      outline-offset: 4px;
+    }
+
+    .social-link:active {
+      transform: translateY(1px) scale(0.97);
+    }
+
     /* Pie de Tarjeta con Sello del Logotipo */
     .card-footer {
-      margin-top: 28px;
+      margin-top: 24px;
       padding: 0 20px;
       display: flex;
       flex-direction: column;
@@ -569,24 +628,24 @@
       }
 
       .action-btn {
-        min-height: 80px;
-        padding: 10px 16px;
+        min-height: 64px;
+        padding: 8px 16px 8px 10px;
       }
 
       .icon-circle {
-        width: 56px;
-        height: 56px;
-        min-width: 56px;
-        margin-right: 16px;
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        margin-right: 14px;
       }
 
       .icon-circle svg {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
       }
 
       .btn-label {
-        font-size: 1.06rem;
+        font-size: 1rem;
       }
     }
 
@@ -608,7 +667,10 @@
 
       .action-btn:hover,
       .action-btn:active,
-      .action-btn:hover .icon-circle {
+      .action-btn:hover .icon-circle,
+      .social-link:hover,
+      .social-link:focus-visible,
+      .social-link:active {
         transform: none;
       }
 
@@ -755,6 +817,28 @@
       </a>
 
     </nav>
+
+    <!-- Redes sociales -->
+    <section class="social-section" aria-labelledby="socialTitle">
+      <h2 class="social-title" id="socialTitle">Síguenos</h2>
+      <ul class="social-list">
+        <li>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=61581674655550" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Mariachi Jalisco Es Tradición" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.6 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3.1z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="social-link" href="https://www.instagram.com/mariachijaliscoestradicion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Mariachi Jalisco Es Tradición" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="social-link" href="https://www.youtube.com/@mariachijaliscoestradicion" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Mariachi Jalisco Es Tradición" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15.1V8.9l5.2 3.1L10 15.1z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </section>
 
     <!-- Pie de la tarjeta (escudo decorativo: el nombre ya está escrito al lado) -->
     <footer class="card-footer">
